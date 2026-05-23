@@ -1,1 +1,0 @@
-# mindmotion-privacy
