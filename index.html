@@ -6,12 +6,26 @@
 <title>MindMotion – Sport. Im richtigen Moment.</title>
 <meta name="description" content="MindMotion ist die ruhige App für kurze Bewegungs-, Atem- und Meditationseinheiten – genau im richtigen Moment. Kein Streak, kein Druck, keine Werbung. Alle Daten bleiben lokal.">
 <meta name="theme-color" content="#1B3B36">
+<link rel="canonical" href="https://jozuern.github.io/mindmotion-privacy/">
 
 <!-- Open Graph / social preview -->
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="MindMotion">
+<meta property="og:url" content="https://jozuern.github.io/mindmotion-privacy/">
 <meta property="og:title" content="MindMotion – Sport. Im richtigen Moment.">
 <meta property="og:description" content="Kurze Bewegungs-, Atem- und Meditationseinheiten im richtigen Moment. Kein Druck, keine Werbung, alle Daten lokal.">
-<meta property="og:image" content="docs/feature-graphic-de-1024x500.png">
+<meta property="og:image" content="https://jozuern.github.io/mindmotion-privacy/docs/feature-graphic-de-1024x500.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="MindMotion – Sport. Im richtigen Moment.">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+
+<!-- Twitter / X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MindMotion – Sport. Im richtigen Moment.">
+<meta name="twitter:description" content="Kurze Bewegungs-, Atem- und Meditationseinheiten im richtigen Moment. Kein Druck, keine Werbung, alle Daten lokal.">
+<meta name="twitter:image" content="https://jozuern.github.io/mindmotion-privacy/docs/feature-graphic-de-1024x500.png">
 
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="512x512" href="docs/icon-512.png">
@@ -56,7 +70,7 @@
 
   <!-- ════════════════════════════ HERO ════════════════════════════ -->
   <section class="hero">
-    <div class="hero-bg" aria-hidden="true">
+    <div class="hero-bg" aria-hidden="true" data-parallax="0.06">
       <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
     </div>
     <div class="wrap hero-grid">
@@ -150,11 +164,11 @@
             </div>
           </div>
         </div>
-        <div class="floaty one">
+        <div class="floaty one" data-parallax="0.12">
           <span class="ic icbg-mint">🫁</span>
           <span><b data-lang="de">Atem-Reset</b><b data-lang="en">Breath reset</b><small data-lang="de">passt in deine Lücke</small><small data-lang="en">fits your free gap</small></span>
         </div>
-        <div class="floaty two">
+        <div class="floaty two" data-parallax="0.17">
           <span class="ic icbg-cream">😌</span>
           <span><b data-lang="de">Stimmung +18%</b><b data-lang="en">Mood +18%</b><small data-lang="de">diese Woche</small><small data-lang="en">this week</small></span>
         </div>
@@ -251,7 +265,7 @@
         </div>
         <div class="sc-visual reveal-right d1">
           <!-- PLACEHOLDER: replace .phone-content with <img src="docs/screenshots/home2.png" alt="…"> -->
-          <div class="phone"><div class="phone-screen"><div class="phone-content mk-screen">
+          <div class="phone" data-parallax="0.05"><div class="phone-screen"><div class="phone-content mk-screen">
             <div class="mk-status"><span>14:05</span><span>▮▮▮ ▾</span></div>
             <div class="mk">
               <div class="mk-greet" data-lang="de">Dein Nachmittag</div>
@@ -289,7 +303,7 @@
         </div>
         <div class="sc-visual reveal-left d1">
           <!-- PLACEHOLDER: replace .phone-content with <img src="docs/screenshots/session.png" alt="…"> -->
-          <div class="phone"><div class="phone-screen"><div class="phone-content mk-screen" style="background:linear-gradient(170deg,#1B3B36,#234B43);">
+          <div class="phone" data-parallax="0.05"><div class="phone-screen"><div class="phone-content mk-screen" style="background:linear-gradient(170deg,#1B3B36,#234B43);">
             <div class="mk-status" style="color:#DCEFE6"><span>08:12</span><span>▮▮▮ ▾</span></div>
             <div class="mk" style="display:flex;flex-direction:column;align-items:center;text-align:center;color:#EAF6EF">
               <div style="font-size:11px;letter-spacing:.08em;color:var(--light-green);margin-top:6px" data-lang="de">SCHRITT 2 VON 4</div>
@@ -323,7 +337,7 @@
         </div>
         <div class="sc-visual reveal-right d1">
           <!-- PLACEHOLDER: replace .phone-content with <img src="docs/screenshots/progress.png" alt="…"> -->
-          <div class="phone"><div class="phone-screen"><div class="phone-content mk-screen">
+          <div class="phone" data-parallax="0.05"><div class="phone-screen"><div class="phone-content mk-screen">
             <div class="mk-status"><span>22:40</span><span>▮▮▮ ▾</span></div>
             <div class="mk">
               <div class="mk-greet" data-lang="de">Dein Wohlbefinden</div>
@@ -404,7 +418,7 @@
             <div class="mk-status"><span>9:41</span><span>▮▮▮ ▾</span></div>
             <div class="mk">
               <div class="mk-greet" data-lang="de">Entdecken</div><div class="mk-greet" data-lang="en">Discover</div>
-              <div class="mk-chips"><span class="mk-chip on">Atem</span><span class="mk-chip">Yoga</span><span class="mk-chip">Cardio</span></div>
+              <div class="mk-chips"><span class="mk-chip on" data-lang="de">Atem</span><span class="mk-chip on" data-lang="en">Breath</span><span class="mk-chip">Yoga</span><span class="mk-chip">Cardio</span></div>
               <div class="mk-card"><div class="mk-row"><div class="mk-thumb icbg-mint">🫁</div><div style="flex:1"><div class="mk-skel w70"></div><div class="mk-skel w50" style="margin-top:7px"></div></div><span class="mk-pill-time">2′</span></div></div>
               <div class="mk-card"><div class="mk-row"><div class="mk-thumb icbg-cream">🧘</div><div style="flex:1"><div class="mk-skel w85"></div><div class="mk-skel w50" style="margin-top:7px"></div></div><span class="mk-pill-time">10′</span></div></div>
               <div class="mk-card"><div class="mk-row"><div class="mk-thumb icbg-teal">🏃</div><div style="flex:1"><div class="mk-skel w70"></div><div class="mk-skel w50" style="margin-top:7px"></div></div><span class="mk-pill-time">7′</span></div></div>
@@ -454,7 +468,7 @@
       <div class="faq reveal">
         <details class="qa">
           <summary><span><span data-lang="de">Ist MindMotion kostenlos?</span><span data-lang="en">Is MindMotion free?</span></span><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <div class="ans"><span data-lang="de">MindMotion erscheint für Android. Es gibt keine Werbung und kein Tracking. Details zur Verfügbarkeit folgen hier zum Launch.</span><span data-lang="en">MindMotion is launching for Android. There are no ads and no tracking. Availability details will appear here at launch.</span></div>
+          <div class="ans"><span data-lang="de">Ja. MindMotion ist kostenlos – ohne Werbung, ohne Tracking und ohne versteckte In-App-Käufe. Die App erscheint für Android; Details zur Verfügbarkeit folgen hier zum Launch.</span><span data-lang="en">Yes. MindMotion is free – with no ads, no tracking and no hidden in-app purchases. It's launching for Android; availability details will appear here at launch.</span></div>
         </details>
         <details class="qa">
           <summary><span><span data-lang="de">Brauche ich ein Konto?</span><span data-lang="en">Do I need an account?</span></span><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>

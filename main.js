@@ -110,7 +110,11 @@
     nums.forEach(function (el) { io.observe(el); });
   })();
 
-  /* ─────────────── Parallax on scroll (subtle, breathing) ─────────────── */
+  /* ─────────────── Parallax on scroll (subtle, breathing) ───────────────
+     Uses the independent CSS `translate` property (not `transform`) so it
+     composes with elements that already carry a transform/rotate or a
+     keyframe animation (phone rotation, floaty "bob", blob drift) instead
+     of overwriting them. */
   (function () {
     var els = document.querySelectorAll('[data-parallax]');
     if (!els.length || reduceMotion) return;
@@ -120,15 +124,18 @@
       els.forEach(function (el) {
         var speed = parseFloat(el.getAttribute('data-parallax')) || 0.08;
         var rect = el.getBoundingClientRect();
+        // Skip off-screen elements — no work, no layout churn.
+        if (rect.bottom < -200 || rect.top > vh + 200) return;
         var center = rect.top + rect.height / 2;
         var offset = (center - vh / 2) * -speed;
-        el.style.transform = 'translateY(' + offset.toFixed(1) + 'px)';
+        el.style.translate = '0 ' + offset.toFixed(1) + 'px';
       });
       ticking = false;
     }
     window.addEventListener('scroll', function () {
       if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
     }, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
     update();
   })();
 

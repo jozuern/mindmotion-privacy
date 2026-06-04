@@ -349,10 +349,15 @@ footer ul a:hover { color: #fff; text-decoration: none; }
 .stagger.in > *:nth-child(5) { transition-delay: .36s; }
 .stagger.in > *:nth-child(6) { transition-delay: .44s; }
 
+/* Parallax elements lean on the independent `translate` property (set in JS),
+   so a transform/animation can run alongside it without being clobbered. */
+[data-parallax] { will-change: translate; }
+
 @media (prefers-reduced-motion: reduce) {
   .reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger > * { opacity: 1 !important; transform: none !important; transition: none !important; }
   .hero-phone .phone, .sc-visual .phone { transform: none !important; }
   .blob, .floaty.one, .floaty.two, .eyebrow .dot { animation: none !important; }
+  [data-parallax] { translate: none !important; will-change: auto; }
   .scroll-progress { display: none; }
 }
 
