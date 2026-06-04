@@ -36,6 +36,34 @@
     });
   })();
 
+  /* ─────────────── Theme (light / dark) toggle ─────────────── */
+  (function () {
+    var KEY = 'mm-theme';
+    var root = document.documentElement;
+    var toggle = document.getElementById('theme-toggle');
+    function current() { return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'; }
+    function apply(theme, store) {
+      theme = theme === 'dark' ? 'dark' : 'light';
+      root.setAttribute('data-theme', theme);
+      if (toggle) toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+      if (store) { try { localStorage.setItem(KEY, theme); } catch (e) {} }
+    }
+    // The inline <head> script already set the attribute; just sync ARIA.
+    apply(current(), false);
+    if (toggle) {
+      toggle.addEventListener('click', function () { apply(current() === 'dark' ? 'light' : 'dark', true); });
+    }
+    // Follow the OS only while the visitor hasn't made an explicit choice.
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    var onChange = function (e) {
+      var stored = null;
+      try { stored = localStorage.getItem(KEY); } catch (e2) {}
+      if (stored !== 'light' && stored !== 'dark') apply(e.matches ? 'dark' : 'light', false);
+    };
+    if (mq.addEventListener) mq.addEventListener('change', onChange);
+    else if (mq.addListener) mq.addListener(onChange);
+  })();
+
   /* ─────────────── Header shadow on scroll ─────────────── */
   (function () {
     var header = document.getElementById('site-header');
@@ -139,24 +167,24 @@
     update();
   })();
 
-  /* ─────────────── Hero phone subtle mouse tilt ─────────────── */
+  /* ─────────────── Hero screenshot subtle mouse tilt ─────────────── */
   (function () {
     var stage = document.querySelector('.hero-phone');
     if (!stage || reduceMotion || window.matchMedia('(pointer: coarse)').matches) return;
-    var phone = stage.querySelector('.phone');
+    var phone = stage.querySelector('.hero-shot');
     if (!phone) return;
     var raf = null, tx = 0, ty = 0;
     stage.addEventListener('mousemove', function (e) {
       var r = stage.getBoundingClientRect();
       var px = (e.clientX - r.left) / r.width - 0.5;
       var py = (e.clientY - r.top) / r.height - 0.5;
-      tx = px * 8; ty = py * -8;
+      tx = px * 7; ty = py * -7;
       if (!raf) raf = requestAnimationFrame(apply);
     });
     stage.addEventListener('mouseleave', function () { tx = 0; ty = 0; if (!raf) raf = requestAnimationFrame(apply); });
     function apply() {
       raf = null;
-      phone.style.transform = 'perspective(900px) rotateY(' + tx.toFixed(2) + 'deg) rotateX(' + ty.toFixed(2) + 'deg) rotate(2deg)';
+      phone.style.transform = 'perspective(1000px) rotateY(' + tx.toFixed(2) + 'deg) rotateX(' + ty.toFixed(2) + 'deg)';
     }
   })();
 

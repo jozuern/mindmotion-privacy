@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Apply saved/system theme before paint to avoid a flash of the wrong mode. -->
+<script>(function(){try{var t=localStorage.getItem('mm-theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <title>MindMotion – Sport. Im richtigen Moment.</title>
 <meta name="description" content="MindMotion ist die ruhige App für kurze Bewegungs-, Atem- und Meditationseinheiten – genau im richtigen Moment. Kein Streak, kein Druck, keine Werbung. Alle Daten bleiben lokal.">
 <meta name="theme-color" content="#1B3B36">
@@ -55,6 +57,10 @@
         <a href="#privacy"><span data-lang="de">Datenschutz</span><span data-lang="en">Privacy</span></a>
         <a href="#faq">FAQ</a>
       </div>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Dunkelmodus umschalten / Toggle dark mode" title="Theme">
+        <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+        <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M19.4 4.6l-1.7 1.7M6.3 17.7l-1.7 1.7"/></svg>
+      </button>
       <div class="lang-toggle" role="group" aria-label="Sprache / Language">
         <button type="button" data-set-lang="de">DE</button>
         <button type="button" data-set-lang="en">EN</button>
@@ -110,67 +116,19 @@
         </p>
       </div>
 
-      <!-- HERO PHONE (filler screenshot) -->
+      <!-- HERO PHONE — real app screenshot (transparent, pre-framed PNG) -->
       <div class="hero-phone reveal-scale d2">
-        <div class="phone">
-          <div class="phone-screen">
-            <!-- PLACEHOLDER: replace this .phone-content with <img src="docs/screenshots/home.png" alt="…"> -->
-            <div class="phone-content mk-screen">
-              <div class="mk-status"><span>9:41</span><span>▮▮▮ ▾</span></div>
-              <div class="mk">
-                <div class="mk-greet" data-lang="de">Guten Morgen</div>
-                <div class="mk-greet" data-lang="en">Good morning</div>
-                <div class="mk-sub" data-lang="de">Ein ruhiger Start zählt mehr als ein perfekter Plan.</div>
-                <div class="mk-sub" data-lang="en">A calm start matters more than a perfect plan.</div>
-
-                <div class="mk-hero-card">
-                  <div class="tag" data-lang="de">IM RICHTIGEN MOMENT</div>
-                  <div class="tag" data-lang="en">AT THE RIGHT MOMENT</div>
-                  <h4 data-lang="de">Atem vor der Klausur</h4>
-                  <h4 data-lang="en">Breathe before the exam</h4>
-                  <p data-lang="de">3 Min · ruhiger Reset für den Kopf</p>
-                  <p data-lang="en">3 min · a calm reset for your mind</p>
-                  <span class="go" data-lang="de">Jetzt starten ›</span>
-                  <span class="go" data-lang="en">Start now ›</span>
-                </div>
-
-                <div class="mk-chips">
-                  <span class="mk-chip on" data-lang="de">Gestresst</span><span class="mk-chip on" data-lang="en">Stressed</span>
-                  <span class="mk-chip" data-lang="de">Okay</span><span class="mk-chip" data-lang="en">Okay</span>
-                  <span class="mk-chip" data-lang="de">Energiegeladen</span><span class="mk-chip" data-lang="en">Energised</span>
-                </div>
-
-                <div class="mk-card">
-                  <div class="mk-row">
-                    <div class="mk-thumb icbg-mint">🧘</div>
-                    <div style="flex:1">
-                      <div class="mk-skel w70"></div>
-                      <div class="mk-skel w50" style="margin-top:7px"></div>
-                    </div>
-                    <span class="mk-pill-time">5′</span>
-                  </div>
-                </div>
-                <div class="mk-card">
-                  <div class="mk-row">
-                    <div class="mk-thumb icbg-cream">🚶</div>
-                    <div style="flex:1">
-                      <div class="mk-skel w85"></div>
-                      <div class="mk-skel w50" style="margin-top:7px"></div>
-                    </div>
-                    <span class="mk-pill-time">12′</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="shot hero-shot">
+          <img data-lang="de" src="docs/screenshots/home_DE.png" alt="MindMotion Home-Bildschirm: persönliche Begrüßung, Energie-Auswahl und der heutige Zeitplan." width="1410" height="2968" loading="eager">
+          <img data-lang="en" src="docs/screenshots/home_EN.png" alt="MindMotion home screen: personal greeting, energy picker and today's schedule." width="1410" height="2968" loading="eager">
         </div>
         <div class="floaty one" data-parallax="0.12">
-          <span class="ic icbg-mint">🫁</span>
+          <span class="ic icbg-mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.6 4.6A2 2 0 1 1 11 8H2M12.6 19.4A2 2 0 1 0 14 16H2M17.7 7.7A2.5 2.5 0 1 1 19.5 12H2"/></svg></span>
           <span><b data-lang="de">Atem-Reset</b><b data-lang="en">Breath reset</b><small data-lang="de">passt in deine Lücke</small><small data-lang="en">fits your free gap</small></span>
         </div>
         <div class="floaty two" data-parallax="0.17">
-          <span class="ic icbg-cream">😌</span>
-          <span><b data-lang="de">Stimmung +18%</b><b data-lang="en">Mood +18%</b><small data-lang="de">diese Woche</small><small data-lang="en">this week</small></span>
+          <span class="ic icbg-cream"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg></span>
+          <span><b data-lang="de">Stimmung steigt</b><b data-lang="en">Mood trending up</b><small data-lang="de">diese Woche</small><small data-lang="en">this week</small></span>
         </div>
       </div>
     </div>
@@ -264,29 +222,10 @@
           </ul>
         </div>
         <div class="sc-visual reveal-right d1">
-          <!-- PLACEHOLDER: replace .phone-content with <img src="docs/screenshots/home2.png" alt="…"> -->
-          <div class="phone" data-parallax="0.05"><div class="phone-screen"><div class="phone-content mk-screen">
-            <div class="mk-status"><span>14:05</span><span>▮▮▮ ▾</span></div>
-            <div class="mk">
-              <div class="mk-greet" data-lang="de">Dein Nachmittag</div>
-              <div class="mk-greet" data-lang="en">Your afternoon</div>
-              <div class="mk-hero-card">
-                <div class="tag" data-lang="de">FREIE LÜCKE · 22 MIN</div>
-                <div class="tag" data-lang="en">FREE GAP · 22 MIN</div>
-                <h4 data-lang="de">Sitz-Ausgleich</h4>
-                <h4 data-lang="en">Sitting counterbalance</h4>
-                <p data-lang="de">Nach 2 Std Vorlesung – Rücken &amp; Hüfte lösen.</p>
-                <p data-lang="en">After 2 h of lectures – release back &amp; hips.</p>
-                <span class="go" data-lang="de">Starten ›</span><span class="go" data-lang="en">Start ›</span>
-              </div>
-              <div class="mk-card" style="margin-top:14px">
-                <div class="mk-row"><div class="mk-thumb icbg-teal">📅</div><div style="flex:1"><div class="mk-skel w70"></div><div class="mk-skel w50" style="margin-top:7px"></div></div></div>
-              </div>
-              <div class="mk-card">
-                <div class="mk-row"><div class="mk-thumb icbg-mint">🧠</div><div style="flex:1"><div class="mk-skel w85"></div><div class="mk-skel w50" style="margin-top:7px"></div></div><span class="mk-pill-time">3′</span></div>
-              </div>
-            </div>
-          </div></div></div>
+          <div class="shot" data-parallax="0.05">
+            <img data-lang="de" src="docs/screenshots/home2_DE.png" alt="MindMotion erkennt eine freie Lücke und schlägt eine passende Einheit für den Nachmittag vor." width="1410" height="2968" loading="lazy">
+            <img data-lang="en" src="docs/screenshots/home2_EN.png" alt="MindMotion spots a free gap and suggests a fitting session for the afternoon." width="1410" height="2968" loading="lazy">
+          </div>
         </div>
       </div>
 
@@ -302,25 +241,10 @@
           </ul>
         </div>
         <div class="sc-visual reveal-left d1">
-          <!-- PLACEHOLDER: replace .phone-content with <img src="docs/screenshots/session.png" alt="…"> -->
-          <div class="phone" data-parallax="0.05"><div class="phone-screen"><div class="phone-content mk-screen" style="background:linear-gradient(170deg,#1B3B36,#234B43);">
-            <div class="mk-status" style="color:#DCEFE6"><span>08:12</span><span>▮▮▮ ▾</span></div>
-            <div class="mk" style="display:flex;flex-direction:column;align-items:center;text-align:center;color:#EAF6EF">
-              <div style="font-size:11px;letter-spacing:.08em;color:var(--light-green);margin-top:6px" data-lang="de">SCHRITT 2 VON 4</div>
-              <div style="font-size:11px;letter-spacing:.08em;color:var(--light-green);margin-top:6px" data-lang="en">STEP 2 OF 4</div>
-              <div style="font-family:'Fraunces',serif;font-size:20px;margin-top:6px" data-lang="de">Box-Atmung</div>
-              <div style="font-family:'Fraunces',serif;font-size:20px;margin-top:6px" data-lang="en">Box breathing</div>
-              <div class="mk-ring" style="background:conic-gradient(var(--light-green) 0% 55%, rgba(255,255,255,.14) 55% 100%)">
-                <div class="inner" style="background:#16332E"><b style="color:#EAF6EF">1:12</b><small style="color:var(--light-green)" data-lang="de">verbleibend</small><small style="color:var(--light-green)" data-lang="en">remaining</small></div>
-              </div>
-              <p style="font-size:12.5px;color:#C7E2D6;margin-top:10px;max-width:24ch" data-lang="de">Einatmen 4 · halten 4 · ausatmen 4 · halten 4.</p>
-              <p style="font-size:12.5px;color:#C7E2D6;margin-top:10px;max-width:24ch" data-lang="en">Inhale 4 · hold 4 · exhale 4 · hold 4.</p>
-              <div style="display:flex;gap:10px;margin-top:16px">
-                <span style="width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.12);display:grid;place-items:center">⏸</span>
-                <span style="width:46px;height:46px;border-radius:50%;background:var(--light-green);color:var(--teal);display:grid;place-items:center">⏭</span>
-              </div>
-            </div>
-          </div></div></div>
+          <div class="shot" data-parallax="0.05">
+            <img data-lang="de" src="docs/screenshots/session_DE.png" alt="Geführte Einheit in MindMotion: aktueller Schritt, Fortschrittsring und Timer." width="1410" height="2968" loading="lazy">
+            <img data-lang="en" src="docs/screenshots/session_EN.png" alt="A guided MindMotion session: current step, progress ring and timer." width="1410" height="2968" loading="lazy">
+          </div>
         </div>
       </div>
 
@@ -336,21 +260,10 @@
           </ul>
         </div>
         <div class="sc-visual reveal-right d1">
-          <!-- PLACEHOLDER: replace .phone-content with <img src="docs/screenshots/progress.png" alt="…"> -->
-          <div class="phone" data-parallax="0.05"><div class="phone-screen"><div class="phone-content mk-screen">
-            <div class="mk-status"><span>22:40</span><span>▮▮▮ ▾</span></div>
-            <div class="mk">
-              <div class="mk-greet" data-lang="de">Dein Wohlbefinden</div>
-              <div class="mk-greet" data-lang="en">Your wellbeing</div>
-              <div class="mk-card" style="text-align:center">
-                <div class="mk-ring"><div class="inner"><b>78</b><small data-lang="de">Schlafscore</small><small data-lang="en">Sleep score</small></div></div>
-              </div>
-              <div class="mk-card">
-                <div class="mk-skel w50"></div>
-                <div class="mk-bars"><i style="height:55%"></i><i style="height:72%"></i><i style="height:48%"></i><i style="height:86%"></i><i style="height:64%"></i><i style="height:92%"></i><i style="height:70%"></i></div>
-              </div>
-            </div>
-          </div></div></div>
+          <div class="shot" data-parallax="0.05">
+            <img data-lang="de" src="docs/screenshots/progress_DE.png" alt="Fortschritts-Übersicht in MindMotion: Wohlbefinden-Wert, Wochenverlauf und Einsichten." width="1410" height="2968" loading="lazy">
+            <img data-lang="en" src="docs/screenshots/progress_EN.png" alt="MindMotion progress overview: wellbeing score, weekly trend and insights." width="1410" height="2968" loading="lazy">
+          </div>
         </div>
       </div>
     </div>
@@ -412,47 +325,36 @@
         <h2 class="reveal d1"><span data-lang="de">Ruhig gestaltet, bis ins Detail.</span><span data-lang="en">Calmly designed, down to the detail.</span></h2>
       </div>
       <div class="gallery-track stagger reveal">
-        <!-- Each block is a filler screenshot. Replace .phone-content with <img src="docs/screenshots/…"> -->
         <div>
-          <div class="phone"><div class="phone-screen"><div class="phone-content mk-screen">
-            <div class="mk-status"><span>9:41</span><span>▮▮▮ ▾</span></div>
-            <div class="mk">
-              <div class="mk-greet" data-lang="de">Entdecken</div><div class="mk-greet" data-lang="en">Discover</div>
-              <div class="mk-chips"><span class="mk-chip on" data-lang="de">Atem</span><span class="mk-chip on" data-lang="en">Breath</span><span class="mk-chip">Yoga</span><span class="mk-chip">Cardio</span></div>
-              <div class="mk-card"><div class="mk-row"><div class="mk-thumb icbg-mint">🫁</div><div style="flex:1"><div class="mk-skel w70"></div><div class="mk-skel w50" style="margin-top:7px"></div></div><span class="mk-pill-time">2′</span></div></div>
-              <div class="mk-card"><div class="mk-row"><div class="mk-thumb icbg-cream">🧘</div><div style="flex:1"><div class="mk-skel w85"></div><div class="mk-skel w50" style="margin-top:7px"></div></div><span class="mk-pill-time">10′</span></div></div>
-              <div class="mk-card"><div class="mk-row"><div class="mk-thumb icbg-teal">🏃</div><div style="flex:1"><div class="mk-skel w70"></div><div class="mk-skel w50" style="margin-top:7px"></div></div><span class="mk-pill-time">7′</span></div></div>
-              <div class="mk-card"><div class="mk-row"><div class="mk-thumb icbg-mint">🚶</div><div style="flex:1"><div class="mk-skel w85"></div><div class="mk-skel w50" style="margin-top:7px"></div></div><span class="mk-pill-time">15′</span></div></div>
-            </div>
-          </div></div></div>
+          <div class="shot">
+            <img data-lang="de" src="docs/screenshots/discover_DE.png" alt="Entdecken-Bildschirm mit durchsuchbarem Aktivitätenkatalog und Filtern." width="1410" height="2968" loading="lazy">
+            <img data-lang="en" src="docs/screenshots/discover_EN.png" alt="Discover screen with a searchable activity catalogue and filters." width="1410" height="2968" loading="lazy">
+          </div>
           <div class="gcap"><span data-lang="de">Entdecken</span><span data-lang="en">Discover</span></div>
         </div>
 
         <div>
-          <div class="phone"><div class="phone-screen"><div class="phone-content mk-screen">
-            <div class="mk-status"><span>7:30</span><span>▮▮▮ ▾</span></div>
-            <div class="mk">
-              <div class="mk-greet" data-lang="de">Schlaf-Check-in</div><div class="mk-greet" data-lang="en">Sleep check-in</div>
-              <div class="mk-sub" data-lang="de">Wie hast du geschlafen?</div><div class="mk-sub" data-lang="en">How did you sleep?</div>
-              <div class="mk-card" style="text-align:center"><div class="mk-ring"><div class="inner"><b>82</b><small data-lang="de">heute</small><small data-lang="en">today</small></div></div></div>
-              <div class="mk-chips" style="justify-content:center"><span class="mk-chip">😴</span><span class="mk-chip on">🙂</span><span class="mk-chip">😄</span></div>
-              <div class="mk-card"><div class="mk-skel w70"></div><div class="mk-skel w85" style="margin-top:8px"></div></div>
-            </div>
-          </div></div></div>
-          <div class="gcap"><span data-lang="de">Schlaf</span><span data-lang="en">Sleep</span></div>
+          <div class="shot">
+            <img data-lang="de" src="docs/screenshots/result_DE.png" alt="Abschluss-Bildschirm einer Einheit mit ruhiger Bestätigung und optionalem Stimmungs-Check." width="1410" height="2968" loading="lazy">
+            <img data-lang="en" src="docs/screenshots/result_EN.png" alt="Session completion screen with a calm acknowledgement and an optional mood check." width="1410" height="2968" loading="lazy">
+          </div>
+          <div class="gcap"><span data-lang="de">Geschafft</span><span data-lang="en">Done</span></div>
         </div>
 
         <div>
-          <div class="phone"><div class="phone-screen"><div class="phone-content mk-screen">
-            <div class="mk-status"><span>18:20</span><span>▮▮▮ ▾</span></div>
-            <div class="mk">
-              <div class="mk-greet" data-lang="de">Ich</div><div class="mk-greet" data-lang="en">Me</div>
-              <div class="mk-card"><div class="mk-row"><div class="mk-thumb icbg-teal">🌱</div><div style="flex:1"><div class="mk-skel w50"></div><div class="mk-skel w70" style="margin-top:7px"></div></div></div></div>
-              <div class="mk-card"><div class="mk-skel w85"></div><div class="mk-bars"><i style="height:40%"></i><i style="height:60%"></i><i style="height:35%"></i><i style="height:80%"></i><i style="height:55%"></i></div></div>
-              <div class="mk-chips"><span class="mk-chip on" data-lang="de">Fokus</span><span class="mk-chip on" data-lang="en">Focus</span><span class="mk-chip" data-lang="de">Rücken</span><span class="mk-chip" data-lang="en">Back</span><span class="mk-chip" data-lang="de">Schlaf</span><span class="mk-chip" data-lang="en">Sleep</span></div>
-            </div>
-          </div></div></div>
+          <div class="shot">
+            <img data-lang="de" src="docs/screenshots/profile_DE.png" alt="Profil-Bildschirm mit Zielen, Fokusbereichen und Hinweisen zu körperlichen Einschränkungen." width="1410" height="2968" loading="lazy">
+            <img data-lang="en" src="docs/screenshots/profile_EN.png" alt="Profile screen with goals, focus areas and body-limitation notes." width="1410" height="2968" loading="lazy">
+          </div>
           <div class="gcap"><span data-lang="de">Profil</span><span data-lang="en">Profile</span></div>
+        </div>
+
+        <div>
+          <div class="shot">
+            <img data-lang="de" src="docs/screenshots/progress2_DE.png" alt="Schlaf- und Bewegungsverlauf mit Wochenchart und den letzten Einheiten." width="1410" height="2968" loading="lazy">
+            <img data-lang="en" src="docs/screenshots/progress2_EN.png" alt="Sleep and movement history with a weekly chart and recent sessions." width="1410" height="2968" loading="lazy">
+          </div>
+          <div class="gcap"><span data-lang="de">Schlaf &amp; Bewegung</span><span data-lang="en">Sleep &amp; movement</span></div>
         </div>
       </div>
     </div>

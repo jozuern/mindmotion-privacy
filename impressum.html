@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Apply saved/system theme before paint to avoid a flash of the wrong mode. -->
+<script>(function(){try{var t=localStorage.getItem('mm-theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <title>MindMotion – Impressum / Legal Notice</title>
 <meta name="description" content="Impressum und Anbieterkennzeichnung der MindMotion-Android-App nach § 5 DDG.">
 <meta name="theme-color" content="#1B3B36">
@@ -30,6 +32,10 @@
       MindMotion
     </a>
     <nav class="nav-right">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Dunkelmodus umschalten / Toggle dark mode" title="Theme">
+        <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+        <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M19.4 4.6l-1.7 1.7M6.3 17.7l-1.7 1.7"/></svg>
+      </button>
       <div class="lang-toggle" role="group" aria-label="Sprache / Language">
         <button type="button" data-set-lang="de">DE</button>
         <button type="button" data-set-lang="en">EN</button>
