@@ -58,10 +58,6 @@ html[data-theme="dark"] {
   --header-bg:   rgba(15,28,25,.74);
   color-scheme: dark;
 }
-/* Smooth the flip, but never animate layout-affecting props. */
-body, header, .feat, .step, .btn, .lang-toggle, .theme-toggle, .qa, .final-card, .privacy-band, .tldr, .policy code {
-  transition: background-color .35s var(--ease), border-color .35s var(--ease), color .35s var(--ease);
-}
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 88px; }
