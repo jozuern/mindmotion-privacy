@@ -13,10 +13,11 @@
 <meta property="og:description" content="Kurze Bewegungs-, Atem- und Meditationseinheiten im richtigen Moment. Kein Druck, keine Werbung, alle Daten lokal.">
 <meta property="og:image" content="docs/feature-graphic-de-1024x500.png">
 
-<link rel="icon" type="image/png" href="docs/icon-512.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="512x512" href="docs/icon-512.png">
+<link rel="apple-touch-icon" href="docs/icon-512.png">
+<!-- Fonts are self-hosted (no Google Fonts CDN) so no visitor IP is sent to Google — GDPR-friendly. -->
+<link rel="stylesheet" href="fonts/fonts.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -29,7 +30,7 @@
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="MindMotion">
       <span class="logo" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#EAF6EF" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14c2-5 5-7 8-7s4 2 4 5-1 5-4 5-4-3-2-6"/><path d="M16 8c1.4-1.2 3-1.6 4-1.4"/></svg>
+        <svg viewBox="26 26 56 56" aria-hidden="true"><path fill="#A8D5BA" d="M54,30 C40,42 32,54 32,66 C32,72 38,78 48,78 C58,78 70,68 76,52 C78,46 78,40 78,34 C72,32 64,30 54,30 Z"/><path fill="#6B9B8A" d="M54,30 C50,46 46,58 42,72 C44,74 46,76 48,78"/></svg>
       </span>
       MindMotion
     </a>
@@ -81,10 +82,10 @@
             <span data-lang="de">Keine Werbung</span><span data-lang="en">No ads</span></span>
         </div>
         <div class="cta-row reveal d4" id="get">
-          <a class="store-badge" href="#get" aria-label="Google Play">
+          <span class="store-badge soon" role="img" aria-label="Bald verfügbar bei Google Play – Coming soon on Google Play">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#EAF6EF" d="M3.6 1.8 13 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#A8D5BA" d="M16.8 8.5 5.9 2.3 14 10.4l2.8-1.9z"/><path fill="#5B9EA6" d="M16.8 15.5 14 13.6 5.9 21.7l10.9-6.2z"/><path fill="#6B9B8A" d="M20.4 11.1c.7.4.7 1.4 0 1.8l-2.6 1.5L14.7 12l3.1-2.4 2.6 1.5z"/></svg>
             <span><small data-lang="de">Bald verfügbar bei</small><small data-lang="en">Coming soon on</small><strong>Google Play</strong></span>
-          </a>
+          </span>
           <a class="btn btn-ghost" href="#features">
             <span data-lang="de">So funktioniert's</span><span data-lang="en">How it works</span>
           </a>
@@ -486,10 +487,10 @@
         <h2><span data-lang="de">Bring Bewegung und Ruhe in deinen Tag.</span><span data-lang="en">Bring movement and calm into your day.</span></h2>
         <p><span data-lang="de">Im richtigen Moment – ohne Druck, ohne Schuldgefühle, ohne dass deine Daten dein Gerät verlassen.</span><span data-lang="en">At the right moment – no pressure, no guilt, and without your data ever leaving your device.</span></p>
         <div class="cta-row">
-          <a class="store-badge" href="#get" aria-label="Google Play">
+          <span class="store-badge soon" role="img" aria-label="Bald verfügbar bei Google Play – Coming soon on Google Play">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#EAF6EF" d="M3.6 1.8 13 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#A8D5BA" d="M16.8 8.5 5.9 2.3 14 10.4l2.8-1.9z"/><path fill="#5B9EA6" d="M16.8 15.5 14 13.6 5.9 21.7l10.9-6.2z"/><path fill="#6B9B8A" d="M20.4 11.1c.7.4.7 1.4 0 1.8l-2.6 1.5L14.7 12l3.1-2.4 2.6 1.5z"/></svg>
             <span><small data-lang="de">Bald verfügbar bei</small><small data-lang="en">Coming soon on</small><strong>Google Play</strong></span>
-          </a>
+          </span>
           <a class="btn btn-ghost" href="privacy.html"><span data-lang="de">Datenschutz ansehen</span><span data-lang="en">View privacy</span></a>
         </div>
       </div>
@@ -504,7 +505,7 @@
     <div class="foot-grid">
       <div>
         <div class="brand">
-          <span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#EAF6EF" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14c2-5 5-7 8-7s4 2 4 5-1 5-4 5-4-3-2-6"/><path d="M16 8c1.4-1.2 3-1.6 4-1.4"/></svg></span>
+          <span class="logo" aria-hidden="true"><svg viewBox="26 26 56 56" aria-hidden="true"><path fill="#A8D5BA" d="M54,30 C40,42 32,54 32,66 C32,72 38,78 48,78 C58,78 70,68 76,52 C78,46 78,40 78,34 C72,32 64,30 54,30 Z"/><path fill="#6B9B8A" d="M54,30 C50,46 46,58 42,72 C44,74 46,76 48,78"/></svg></span>
           MindMotion
         </div>
         <p class="foot-about"><span data-lang="de">Die ruhige App für Bewegung, Atem und Meditation im Studienalltag – im richtigen Moment.</span><span data-lang="en">The calm app for movement, breathing and meditation in student life – at the right moment.</span></p>
@@ -521,12 +522,13 @@
         <h4><span data-lang="de">Rechtliches &amp; Kontakt</span><span data-lang="en">Legal &amp; contact</span></h4>
         <ul>
           <li><a href="privacy.html"><span data-lang="de">Datenschutzerklärung</span><span data-lang="en">Privacy policy</span></a></li>
+          <li><a href="impressum.html"><span data-lang="de">Impressum</span><span data-lang="en">Legal notice</span></a></li>
           <li><a href="mailto:mindmotion.feedback@gmail.com">mindmotion.feedback@gmail.com</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© <span id="year">2026</span> MindMotion · Joshua Zürn</span>
+      <span>© <span id="year">2026</span> MindMotion</span>
       <span class="disclaimer"><span data-lang="de">MindMotion ersetzt keine medizinische Beratung. Hinweise zu Belastung und körperlichen Einschränkungen sind unterstützend gemeint, kein ärztlicher Rat.</span><span data-lang="en">MindMotion is not a substitute for medical advice. Notes about intensity and body limitations are supportive, not medical guidance.</span></span>
     </div>
   </div>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" role="img" aria-label="MindMotion">
+  <rect width="108" height="108" rx="24" fill="#1B3B36"/>
+  <circle cx="92" cy="18" r="17" fill="#234B43"/>
+  <circle cx="14" cy="88" r="14" fill="#234B43"/>
+  <path fill="#A8D5BA" d="M54,30 C40,42 32,54 32,66 C32,72 38,78 48,78 C58,78 70,68 76,52 C78,46 78,40 78,34 C72,32 64,30 54,30 Z"/>
+  <path fill="none" stroke="#1B3B36" stroke-width="2.6" stroke-linecap="round" d="M54,32 C50,47 46,58 42,72 C44,74 46,76 48,78"/>
+</svg>
