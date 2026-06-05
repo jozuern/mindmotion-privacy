@@ -71,7 +71,6 @@ html[data-theme="dark"] .lang-toggle button.active { background: #2E5048; color:
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 88px; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {
   margin: 0;
@@ -406,15 +405,6 @@ footer ul a:hover { color: #fff; text-decoration: none; }
    so a transform/animation can run alongside it without being clobbered. */
 [data-parallax] { will-change: translate; }
 
-@media (prefers-reduced-motion: reduce) {
-  .reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger > * { opacity: 1 !important; transform: none !important; transition: none !important; }
-  .hero-shot, .sc-visual .shot { transform: none !important; }
-  .blob, .floaty.one, .floaty.two, .eyebrow .dot { animation: none !important; }
-  [data-parallax] { translate: none !important; will-change: auto; }
-  .sc-visual .shot img, .gallery-track .shot img { clip-path: none !important; transition: none !important; }
-  .scroll-progress { display: none; }
-}
-
 /* ───────────────────────── Privacy policy document ───────────────────────── */
 .policy { max-width: 800px; margin: 0 auto; padding: 56px 24px 100px; }
 .policy .doc-head { margin-bottom: 8px; }
@@ -469,9 +459,6 @@ footer ul a:hover { color: #fff; text-decoration: none; }
   .nav-links a::after { display: none; }
   .nav-right .nav-links-lang { display: inline-flex; align-self: flex-start; margin-top: 12px; }
   .nav-right .nav-links-cta { display: inline-flex; align-self: stretch; justify-content: center; margin-top: 14px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .nav-links { transition: none; }
 }
 @media (max-width: 640px) {
   section { padding: 66px 0; }

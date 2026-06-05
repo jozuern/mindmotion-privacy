@@ -1,12 +1,14 @@
 /* ══════════════════════════════════════════════════════════════════════
    MindMotion website — interactions
-   Calm, intentional motion. Everything degrades gracefully and respects
-   prefers-reduced-motion. No dependencies.
+   Calm, intentional motion. Animations always run (the prefers-reduced-motion
+   gate is intentionally disabled — see reduceMotion below). No dependencies.
    ══════════════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
 
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Animations always run, by request — the OS prefers-reduced-motion setting
+  // is intentionally ignored here (set to true to honour it again).
+  var reduceMotion = false;
 
   /* ─────────────── Language switch (DE default, remembered) ─────────────── */
   (function () {
