@@ -241,7 +241,7 @@ html[data-theme="dark"] .grain { mix-blend-mode: soft-light; opacity: .06; }
 }
 .floaty .ic { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; flex: none; }
 .floaty .ic svg { width: 18px; height: 18px; }
-.floaty b { display: block; font-size: 13.5px; color: var(--teal); font-family: 'Fraunces', serif; font-weight: 600; }
+.floaty b { display: block; font-size: 13.5px; color: var(--heading); font-family: 'Fraunces', serif; font-weight: 600; }
 .floaty small { font-size: 11.5px; color: var(--muted); }
 .floaty.one { top: 40px; left: -34px; animation: bob 6s ease-in-out infinite; }
 .floaty.two { bottom: 56px; right: -28px; animation: bob 7s ease-in-out infinite .8s; }
