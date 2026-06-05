@@ -63,6 +63,11 @@ html[data-theme="dark"] {
    between section + card too deep in dark). */
 html[data-theme="dark"] .feat { background: #1B3A33; border-color: #2A4940; }
 html[data-theme="dark"] .feat:hover { border-color: transparent; }
+/* The active language pill defaults to --white (#16302B), which is nearly
+   identical to the --cream toggle track in dark — the selection reads as
+   invisible. Deepen the track and lift the active pill so it's legible. */
+html[data-theme="dark"] .lang-toggle { background: #122520; }
+html[data-theme="dark"] .lang-toggle button.active { background: #2E5048; color: var(--heading); }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 88px; }
@@ -142,7 +147,10 @@ header.scrolled { border-bottom-color: var(--line); box-shadow: 0 4px 24px rgba(
 .nav-toggle .ic-close { display: none; }
 header.menu-open .nav-toggle .ic-open { display: none; }
 header.menu-open .nav-toggle .ic-close { display: block; }
-.nav-links-cta, .nav-links-lang { display: none; }  /* only surface inside the mobile dropdown */
+/* Surface only inside the mobile dropdown. Scoped under .nav-right so this
+   beats the later .lang-toggle / .btn `display:inline-flex` (equal specificity
+   would otherwise let the mobile duplicates leak onto the desktop bar). */
+.nav-right .nav-links-cta, .nav-right .nav-links-lang { display: none; }
 
 .lang-toggle { display: inline-flex; background: var(--cream); border-radius: 999px; padding: 3px; gap: 2px; }
 .lang-toggle button {
@@ -259,7 +267,8 @@ section { padding: 92px 0; }
 .stat .num { font-family: 'Fraunces', serif; font-size: clamp(34px, 5vw, 52px); color: #fff; font-weight: 600; line-height: 1; display: inline-flex; align-items: baseline; }
 .stat .suffix { color: var(--light-green); }
 .stat .lbl { margin-top: 10px; font-size: 14.5px; color: #A7CBBC; }
-.stats-grid .stat + .stat { position: relative; }
+.stats-grid .stat { position: relative; }
+.stats-grid .stat + .stat::before { content: ""; position: absolute; left: -12px; top: 50%; transform: translateY(-50%); width: 1px; height: 44px; background: rgba(255,255,255,.12); }
 
 /* trust strip */
 .strip { background: var(--teal); color: #DCEFE6; padding: 26px 0; }
@@ -435,6 +444,7 @@ footer ul a:hover { color: #fff; text-decoration: none; }
   .sc-list { text-align: left; max-width: 440px; margin-left: auto; margin-right: auto; }
   .privacy-band { padding: 48px 30px; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 34px 24px; }
+  .stats-grid .stat + .stat::before { display: none; }  /* the divider would fall mid-row in the 2-col layout */
   .reveal-left, .reveal-right { transform: translateY(28px); }
 
   /* Collapse the inline links into a dropdown panel toggled by the hamburger.
@@ -457,8 +467,8 @@ footer ul a:hover { color: #fff; text-decoration: none; }
   header.menu-open .nav-links { opacity: 1; visibility: visible; transform: none; }
   .nav-links a:not(.nav-links-cta) { padding: 14px 4px; font-size: 16.5px; border-bottom: 1px solid var(--line); }
   .nav-links a::after { display: none; }
-  .nav-links-lang { display: inline-flex; align-self: flex-start; margin-top: 12px; }
-  .nav-links-cta { display: inline-flex; align-self: stretch; justify-content: center; margin-top: 14px; }
+  .nav-right .nav-links-lang { display: inline-flex; align-self: flex-start; margin-top: 12px; }
+  .nav-right .nav-links-cta { display: inline-flex; align-self: stretch; justify-content: center; margin-top: 14px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .nav-links { transition: none; }
