@@ -42,7 +42,7 @@
 <div class="scroll-progress" aria-hidden="true"></div>
 
 <!-- ════════════════════════════ HEADER ════════════════════════════ -->
-<header id="site-header">
+<header id="site-header" class="has-menu">
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="MindMotion">
       <span class="logo" aria-hidden="true">
@@ -51,11 +51,16 @@
       MindMotion
     </a>
     <nav class="nav-right">
-      <div class="nav-links">
-        <a href="#features"><span data-lang="de">Funktionen</span><span data-lang="en">Features</span></a>
-        <a href="#moment"><span data-lang="de">Im Moment</span><span data-lang="en">The moment</span></a>
-        <a href="#privacy"><span data-lang="de">Datenschutz</span><span data-lang="en">Privacy</span></a>
+      <div class="nav-links" id="primary-nav">
+        <a href="#features"><span lang="de" data-lang="de">Funktionen</span><span lang="en" data-lang="en">Features</span></a>
+        <a href="#moment"><span lang="de" data-lang="de">Im Moment</span><span lang="en" data-lang="en">The moment</span></a>
+        <a href="#privacy"><span lang="de" data-lang="de">Datenschutz</span><span lang="en" data-lang="en">Privacy</span></a>
         <a href="#faq">FAQ</a>
+        <div class="lang-toggle nav-links-lang" role="group" aria-label="Sprache / Language">
+          <button type="button" data-set-lang="de">DE</button>
+          <button type="button" data-set-lang="en">EN</button>
+        </div>
+        <a class="btn btn-primary btn-sm nav-links-cta" href="#get"><span lang="de" data-lang="de">Holen</span><span lang="en" data-lang="en">Get app</span></a>
       </div>
       <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Dunkelmodus umschalten / Toggle dark mode" title="Theme">
         <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
@@ -65,9 +70,13 @@
         <button type="button" data-set-lang="de">DE</button>
         <button type="button" data-set-lang="en">EN</button>
       </div>
-      <a class="btn btn-primary btn-sm" href="#get">
-        <span data-lang="de">Holen</span><span data-lang="en">Get app</span>
+      <a class="btn btn-primary btn-sm nav-cta" href="#get">
+        <span lang="de" data-lang="de">Holen</span><span lang="en" data-lang="en">Get app</span>
       </a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Menü öffnen / Open menu" title="Menü / Menu">
+        <svg class="ic-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
     </nav>
   </div>
 </header>
@@ -82,53 +91,53 @@
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <span class="eyebrow reveal"><span class="dot"></span>
-          <span data-lang="de">Bewegung &amp; Ruhe für den Studienalltag</span>
-          <span data-lang="en">Movement &amp; calm for student life</span>
+          <span lang="de" data-lang="de">Bewegung &amp; Ruhe für den Studienalltag</span>
+          <span lang="en" data-lang="en">Movement &amp; calm for student life</span>
         </span>
         <h1 class="reveal d1">
-          <span data-lang="de">Sport. <span class="accent">Im richtigen Moment.</span></span>
-          <span data-lang="en">Sport. <span class="accent">At the right moment.</span></span>
+          <span lang="de" data-lang="de">Sport. <span class="accent">Im richtigen Moment.</span></span>
+          <span lang="en" data-lang="en">Sport. <span class="accent">At the right moment.</span></span>
         </h1>
         <p class="lede reveal d2">
-          <span data-lang="de">Kurze Einheiten für Bewegung, Dehnen, Atem und Meditation – genau dann, wenn sie passen. Gemacht für Studierende mit wenig Zeit und viel im Kopf.</span>
-          <span data-lang="en">Short sessions for movement, stretching, breathing and meditation – exactly when they fit. Built for students with little time and a lot on their minds.</span>
+          <span lang="de" data-lang="de">Kurze Einheiten für Bewegung, Dehnen, Atem und Meditation – genau dann, wenn sie passen. Gemacht für Studierende mit wenig Zeit und viel im Kopf.</span>
+          <span lang="en" data-lang="en">Short sessions for movement, stretching, breathing and meditation – exactly when they fit. Built for students with little time and a lot on their minds.</span>
         </p>
         <div class="promise reveal d3">
           <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span data-lang="de">Kein Streak</span><span data-lang="en">No streak</span></span>
+            <span lang="de" data-lang="de">Kein Streak</span><span lang="en" data-lang="en">No streak</span></span>
           <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span data-lang="de">Kein Druck</span><span data-lang="en">No pressure</span></span>
+            <span lang="de" data-lang="de">Kein Druck</span><span lang="en" data-lang="en">No pressure</span></span>
           <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span data-lang="de">Keine Werbung</span><span data-lang="en">No ads</span></span>
+            <span lang="de" data-lang="de">Keine Werbung</span><span lang="en" data-lang="en">No ads</span></span>
         </div>
         <div class="cta-row reveal d4" id="get">
           <span class="store-badge soon" role="img" aria-label="Bald verfügbar bei Google Play – Coming soon on Google Play">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#EAF6EF" d="M3.6 1.8 13 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#A8D5BA" d="M16.8 8.5 5.9 2.3 14 10.4l2.8-1.9z"/><path fill="#5B9EA6" d="M16.8 15.5 14 13.6 5.9 21.7l10.9-6.2z"/><path fill="#6B9B8A" d="M20.4 11.1c.7.4.7 1.4 0 1.8l-2.6 1.5L14.7 12l3.1-2.4 2.6 1.5z"/></svg>
-            <span><small data-lang="de">Bald verfügbar bei</small><small data-lang="en">Coming soon on</small><strong>Google Play</strong></span>
+            <span><small lang="de" data-lang="de">Bald verfügbar bei</small><small lang="en" data-lang="en">Coming soon on</small><strong>Google Play</strong></span>
           </span>
           <a class="btn btn-ghost" href="#features">
-            <span data-lang="de">So funktioniert's</span><span data-lang="en">How it works</span>
+            <span lang="de" data-lang="de">So funktioniert's</span><span lang="en" data-lang="en">How it works</span>
           </a>
         </div>
         <p class="hero-note reveal d5">
-          <span data-lang="de">Android · Deutsch &amp; Englisch · alle Daten bleiben auf deinem Gerät</span>
-          <span data-lang="en">Android · German &amp; English · all data stays on your device</span>
+          <span lang="de" data-lang="de">Android · Deutsch &amp; Englisch · alle Daten bleiben auf deinem Gerät</span>
+          <span lang="en" data-lang="en">Android · German &amp; English · all data stays on your device</span>
         </p>
       </div>
 
       <!-- HERO PHONE — real app screenshot (transparent, pre-framed PNG) -->
       <div class="hero-phone reveal-scale d2">
         <div class="shot hero-shot">
-          <img data-lang="de" src="docs/screenshots/home_DE.png" alt="MindMotion Home-Bildschirm: persönliche Begrüßung, Energie-Auswahl und der heutige Zeitplan." width="1410" height="2968" loading="eager">
-          <img data-lang="en" src="docs/screenshots/home_EN.png" alt="MindMotion home screen: personal greeting, energy picker and today's schedule." width="1410" height="2968" loading="eager">
+          <img lang="de" data-lang="de" src="docs/screenshots/home_DE.png" alt="MindMotion Home-Bildschirm: persönliche Begrüßung, Energie-Auswahl und der heutige Zeitplan." width="1410" height="2968" loading="eager">
+          <img lang="en" data-lang="en" src="docs/screenshots/home_EN.png" alt="MindMotion home screen: personal greeting, energy picker and today's schedule." width="1410" height="2968" loading="eager">
         </div>
         <div class="floaty one" data-parallax="0.12">
           <span class="ic icbg-mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.6 4.6A2 2 0 1 1 11 8H2M12.6 19.4A2 2 0 1 0 14 16H2M17.7 7.7A2.5 2.5 0 1 1 19.5 12H2"/></svg></span>
-          <span><b data-lang="de">Atem-Reset</b><b data-lang="en">Breath reset</b><small data-lang="de">passt in deine Lücke</small><small data-lang="en">fits your free gap</small></span>
+          <span><b lang="de" data-lang="de">Atem-Reset</b><b lang="en" data-lang="en">Breath reset</b><small lang="de" data-lang="de">passt in deine Lücke</small><small lang="en" data-lang="en">fits your free gap</small></span>
         </div>
         <div class="floaty two" data-parallax="0.17">
           <span class="ic icbg-cream"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg></span>
-          <span><b data-lang="de">Stimmung steigt</b><b data-lang="en">Mood trending up</b><small data-lang="de">diese Woche</small><small data-lang="en">this week</small></span>
+          <span><b lang="de" data-lang="de">Stimmung steigt</b><b lang="en" data-lang="en">Mood trending up</b><small lang="de" data-lang="de">diese Woche</small><small lang="en" data-lang="en">this week</small></span>
         </div>
       </div>
     </div>
@@ -140,19 +149,19 @@
       <div class="stats-grid stagger reveal">
         <div class="stat">
           <div class="num"><span data-count="1">1</span>–<span data-count="30">30</span></div>
-          <div class="lbl"><span data-lang="de">Minuten pro Einheit</span><span data-lang="en">minutes per session</span></div>
+          <div class="lbl"><span lang="de" data-lang="de">Minuten pro Einheit</span><span lang="en" data-lang="en">minutes per session</span></div>
         </div>
         <div class="stat">
           <div class="num"><span data-count="40">40</span><span class="suffix">+</span></div>
-          <div class="lbl"><span data-lang="de">geführte Einheiten</span><span data-lang="en">guided sessions</span></div>
+          <div class="lbl"><span lang="de" data-lang="de">geführte Einheiten</span><span lang="en" data-lang="en">guided sessions</span></div>
         </div>
         <div class="stat">
           <div class="num"><span data-count="0">0</span></div>
-          <div class="lbl"><span data-lang="de">Tracker &amp; Werbe-IDs</span><span data-lang="en">trackers &amp; ad IDs</span></div>
+          <div class="lbl"><span lang="de" data-lang="de">Tracker &amp; Werbe-IDs</span><span lang="en" data-lang="en">trackers &amp; ad IDs</span></div>
         </div>
         <div class="stat">
           <div class="num"><span data-count="100">100</span><span class="suffix">%</span></div>
-          <div class="lbl"><span data-lang="de">lokal auf deinem Gerät</span><span data-lang="en">local on your device</span></div>
+          <div class="lbl"><span lang="de" data-lang="de">lokal auf deinem Gerät</span><span lang="en" data-lang="en">local on your device</span></div>
         </div>
       </div>
     </div>
@@ -162,46 +171,46 @@
   <section class="features" id="features">
     <div class="wrap">
       <div class="sec-head">
-        <div class="sec-eyebrow reveal"><span class="idx">01</span><span data-lang="de">Was MindMotion kann</span><span data-lang="en">What MindMotion does</span></div>
-        <h2 class="reveal d1"><span data-lang="de">Weniger Stress, ohne mehr To-dos.</span><span data-lang="en">Less stress, without more to-dos.</span></h2>
-        <p class="reveal d2"><span data-lang="de">Sechs ruhige Ideen, die zusammenarbeiten – damit Bewegung und Pause genau dann erscheinen, wenn sie helfen.</span><span data-lang="en">Six calm ideas that work together – so movement and rest show up exactly when they help.</span></p>
+        <div class="sec-eyebrow reveal"><span class="idx">01</span><span lang="de" data-lang="de">Was MindMotion kann</span><span lang="en" data-lang="en">What MindMotion does</span></div>
+        <h2 class="reveal d1"><span lang="de" data-lang="de">Weniger Stress, ohne mehr To-dos.</span><span lang="en" data-lang="en">Less stress, without more to-dos.</span></h2>
+        <p class="reveal d2"><span lang="de" data-lang="de">Sechs ruhige Ideen, die zusammenarbeiten – damit Bewegung und Pause genau dann erscheinen, wenn sie helfen.</span><span lang="en" data-lang="en">Six calm ideas that work together – so movement and rest show up exactly when they help.</span></p>
       </div>
 
       <div class="feat-grid stagger reveal">
         <article class="feat">
           <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9 16 2 2 4-4"/></svg></div>
-          <h3><span data-lang="de">Im richtigen Moment</span><span data-lang="en">At the right moment</span></h3>
-          <p><span data-lang="de">Verbinde deinen Kalender – MindMotion erkennt freie Lücken und Situationen, in denen eine kurze Einheit wirklich hilft: vor der Prüfung, in der Lernpause, nach langem Sitzen.</span><span data-lang="en">Connect your calendar – MindMotion spots free gaps and the moments a short session actually helps: before an exam, in a study break, after long sitting.</span></p>
+          <h3><span lang="de" data-lang="de">Im richtigen Moment</span><span lang="en" data-lang="en">At the right moment</span></h3>
+          <p><span lang="de" data-lang="de">Verbinde deinen Kalender – MindMotion erkennt freie Lücken und Situationen, in denen eine kurze Einheit wirklich hilft: vor der Prüfung, in der Lernpause, nach langem Sitzen.</span><span lang="en" data-lang="en">Connect your calendar – MindMotion spots free gaps and the moments a short session actually helps: before an exam, in a study break, after long sitting.</span></p>
         </article>
 
         <article class="feat">
           <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4-3 7-6 7-11a7 7 0 0 0-14 0c0 5 3 8 7 11z"/><circle cx="12" cy="11" r="2.5"/></svg></div>
-          <h3><span data-lang="de">Gegen Stress, für Fokus</span><span data-lang="en">For stress relief &amp; focus</span></h3>
-          <p><span data-lang="de">Atemübungen und Meditation zum Stressabbau, kurze Workouts für Energie. Sag, wie viel Energie du hast – die Vorschläge passen sich an.</span><span data-lang="en">Breathing and meditation for stress relief, short workouts for energy. Tell it how much energy you have – the suggestions adapt.</span></p>
+          <h3><span lang="de" data-lang="de">Gegen Stress, für Fokus</span><span lang="en" data-lang="en">For stress relief &amp; focus</span></h3>
+          <p><span lang="de" data-lang="de">Atemübungen und Meditation zum Stressabbau, kurze Workouts für Energie. Sag, wie viel Energie du hast – die Vorschläge passen sich an.</span><span lang="en" data-lang="en">Breathing and meditation for stress relief, short workouts for energy. Tell it how much energy you have – the suggestions adapt.</span></p>
         </article>
 
         <article class="feat">
           <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-          <h3><span data-lang="de">Geführte Einheiten 1–30 Min</span><span data-lang="en">Guided sessions 1–30 min</span></h3>
-          <p><span data-lang="de">Yoga, Dehnen, Mobility, Atem, Meditation, Spaziergänge sowie kurze Kraft- und Cardio-Einheiten – mit klaren Schritten, Illustrationen und ruhiger Sprachführung.</span><span data-lang="en">Yoga, stretching, mobility, breathing, meditation, walks, plus short strength and cardio – with clear steps, illustrations and calm voice guidance.</span></p>
+          <h3><span lang="de" data-lang="de">Geführte Einheiten 1–30 Min</span><span lang="en" data-lang="en">Guided sessions 1–30 min</span></h3>
+          <p><span lang="de" data-lang="de">Yoga, Dehnen, Mobility, Atem, Meditation, Spaziergänge sowie kurze Kraft- und Cardio-Einheiten – mit klaren Schritten, Illustrationen und ruhiger Sprachführung.</span><span lang="en" data-lang="en">Yoga, stretching, mobility, breathing, meditation, walks, plus short strength and cardio – with clear steps, illustrations and calm voice guidance.</span></p>
         </article>
 
         <article class="feat">
           <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg></div>
-          <h3><span data-lang="de">Schlaf &amp; Wohlbefinden</span><span data-lang="en">Sleep &amp; wellbeing</span></h3>
-          <p><span data-lang="de">Ein optionaler Schlafscore und ein Wohlbefinden-Überblick helfen, Muster zu erkennen. Importiere aus Health Connect – oder trag alles selbst ein.</span><span data-lang="en">An optional sleep score and wellbeing overview help you spot patterns. Import from Health Connect – or log everything yourself.</span></p>
+          <h3><span lang="de" data-lang="de">Schlaf &amp; Wohlbefinden</span><span lang="en" data-lang="en">Sleep &amp; wellbeing</span></h3>
+          <p><span lang="de" data-lang="de">Ein optionaler Schlafscore und ein Wohlbefinden-Überblick helfen, Muster zu erkennen. Importiere aus Health Connect – oder trag alles selbst ein.</span><span lang="en" data-lang="en">An optional sleep score and wellbeing overview help you spot patterns. Import from Health Connect – or log everything yourself.</span></p>
         </article>
 
         <article class="feat">
           <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/><path d="m3 3 18 18" opacity=".5"/></svg></div>
-          <h3><span data-lang="de">Ohne Druck, ohne Schuld</span><span data-lang="en">No pressure, no guilt</span></h3>
-          <p><span data-lang="de">Keine Streaks, keine Ranglisten, keine Nudges, die nerven. Sanfte Vorschläge mit Ruhezeiten und Tageslimit, die lernen, sich zurückzuhalten.</span><span data-lang="en">No streaks, no leaderboards, no nagging. Gentle suggestions with quiet hours and a daily cap that learn to back off.</span></p>
+          <h3><span lang="de" data-lang="de">Ohne Druck, ohne Schuld</span><span lang="en" data-lang="en">No pressure, no guilt</span></h3>
+          <p><span lang="de" data-lang="de">Keine Streaks, keine Ranglisten, keine Nudges, die nerven. Sanfte Vorschläge mit Ruhezeiten und Tageslimit, die lernen, sich zurückzuhalten.</span><span lang="en" data-lang="en">No streaks, no leaderboards, no nagging. Gentle suggestions with quiet hours and a daily cap that learn to back off.</span></p>
         </article>
 
         <article class="feat">
           <div class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-          <h3><span data-lang="de">Deine Daten bleiben bei dir</span><span data-lang="en">Your data stays with you</span></h3>
-          <p><span data-lang="de">Kein Konto, kein Tracking, keine Werbung, kein Server. Alles bleibt lokal. Export als Backup oder Gesundheitsbericht nur auf deinen Wunsch.</span><span data-lang="en">No account, no tracking, no ads, no server. Everything stays local. Export as a backup or health report only when you choose to.</span></p>
+          <h3><span lang="de" data-lang="de">Deine Daten bleiben bei dir</span><span lang="en" data-lang="en">Your data stays with you</span></h3>
+          <p><span lang="de" data-lang="de">Kein Konto, kein Tracking, keine Werbung, kein Server. Alles bleibt lokal. Export als Backup oder Gesundheitsbericht nur auf deinen Wunsch.</span><span lang="en" data-lang="en">No account, no tracking, no ads, no server. Everything stays local. Export as a backup or health report only when you choose to.</span></p>
         </article>
       </div>
     </div>
@@ -212,57 +221,57 @@
     <div class="wrap">
       <div class="showcase">
         <div class="sc-text reveal-left">
-          <span class="sc-eyebrow"><span data-lang="de">Im richtigen Moment</span><span data-lang="en">At the right moment</span></span>
-          <h2><span data-lang="de">Die App kommt zu dir – nicht andersrum.</span><span data-lang="en">The app comes to you – not the other way round.</span></h2>
-          <p><span data-lang="de">Statt einer weiteren Erinnerung, die du wegklickst, liest MindMotion deinen Tag: die 20 Minuten zwischen zwei Vorlesungen, der Moment kurz vor der Klausur, die Stunde nach einem langen Lerntag.</span><span data-lang="en">Instead of one more reminder you dismiss, MindMotion reads your day: the 20 minutes between two lectures, the moment right before an exam, the hour after a long study day.</span></p>
+          <span class="sc-eyebrow"><span lang="de" data-lang="de">Im richtigen Moment</span><span lang="en" data-lang="en">At the right moment</span></span>
+          <h2><span lang="de" data-lang="de">Die App kommt zu dir – nicht andersrum.</span><span lang="en" data-lang="en">The app comes to you – not the other way round.</span></h2>
+          <p><span lang="de" data-lang="de">Statt einer weiteren Erinnerung, die du wegklickst, liest MindMotion deinen Tag: die 20 Minuten zwischen zwei Vorlesungen, der Moment kurz vor der Klausur, die Stunde nach einem langen Lerntag.</span><span lang="en" data-lang="en">Instead of one more reminder you dismiss, MindMotion reads your day: the 20 minutes between two lectures, the moment right before an exam, the hour after a long study day.</span></p>
           <ul class="sc-list">
-            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang="de">Erkennt freie Lücken aus deinem Kalender</span><span data-lang="en">Spots free gaps from your calendar</span></li>
-            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang="de">Schlägt einen Atem-Reset vor der Prüfung vor</span><span data-lang="en">Suggests a breath reset before an exam</span></li>
-            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang="de">Kein Kalender? Trag deinen Stundenplan manuell ein</span><span data-lang="en">No calendar? Enter your schedule manually</span></li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span lang="de" data-lang="de">Erkennt freie Lücken aus deinem Kalender</span><span lang="en" data-lang="en">Spots free gaps from your calendar</span></li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span lang="de" data-lang="de">Schlägt einen Atem-Reset vor der Prüfung vor</span><span lang="en" data-lang="en">Suggests a breath reset before an exam</span></li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span lang="de" data-lang="de">Kein Kalender? Trag deinen Stundenplan manuell ein</span><span lang="en" data-lang="en">No calendar? Enter your schedule manually</span></li>
           </ul>
         </div>
         <div class="sc-visual reveal-right d1">
           <div class="shot" data-parallax="0.05">
-            <img data-lang="de" src="docs/screenshots/home2_DE.png" alt="MindMotion erkennt eine freie Lücke und schlägt eine passende Einheit für den Nachmittag vor." width="1410" height="2968" loading="lazy">
-            <img data-lang="en" src="docs/screenshots/home2_EN.png" alt="MindMotion spots a free gap and suggests a fitting session for the afternoon." width="1410" height="2968" loading="lazy">
+            <img lang="de" data-lang="de" src="docs/screenshots/home2_DE.png" alt="MindMotion erkennt eine freie Lücke und schlägt eine passende Einheit für den Nachmittag vor." width="1410" height="2968" loading="lazy">
+            <img lang="en" data-lang="en" src="docs/screenshots/home2_EN.png" alt="MindMotion spots a free gap and suggests a fitting session for the afternoon." width="1410" height="2968" loading="lazy">
           </div>
         </div>
       </div>
 
       <div class="showcase flip">
         <div class="sc-text reveal-right">
-          <span class="sc-eyebrow"><span data-lang="de">Geführte Einheiten</span><span data-lang="en">Guided sessions</span></span>
-          <h2><span data-lang="de">Klar geführt. Auch mit geschlossenen Augen.</span><span data-lang="en">Clearly guided. Even with your eyes closed.</span></h2>
-          <p><span data-lang="de">Jede Einheit führt dich Schritt für Schritt: ruhige Sprache, Illustrationen und ein Timer, der auch im Sperrbildschirm und mit haptischem Feedback weiterläuft.</span><span data-lang="en">Every session guides you step by step: calm narration, illustrations and a timer that keeps running on the lock screen, with haptic cues.</span></p>
+          <span class="sc-eyebrow"><span lang="de" data-lang="de">Geführte Einheiten</span><span lang="en" data-lang="en">Guided sessions</span></span>
+          <h2><span lang="de" data-lang="de">Klar geführt. Auch mit geschlossenen Augen.</span><span lang="en" data-lang="en">Clearly guided. Even with your eyes closed.</span></h2>
+          <p><span lang="de" data-lang="de">Jede Einheit führt dich Schritt für Schritt: ruhige Sprache, Illustrationen und ein Timer, der auch im Sperrbildschirm und mit haptischem Feedback weiterläuft.</span><span lang="en" data-lang="en">Every session guides you step by step: calm narration, illustrations and a timer that keeps running on the lock screen, with haptic cues.</span></p>
           <ul class="sc-list">
-            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang="de">Von der 1-Minuten-Mikro-Einheit bis 30 Minuten</span><span data-lang="en">From a 1-minute micro-session up to 30 minutes</span></li>
-            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang="de">Intensität in der Einheit anpassbar</span><span data-lang="en">Adjust the effort mid-session</span></li>
-            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang="de">Sichere Hinweise bei körperlichen Einschränkungen</span><span data-lang="en">Safety notes that respect body limitations</span></li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span lang="de" data-lang="de">Von der 1-Minuten-Mikro-Einheit bis 30 Minuten</span><span lang="en" data-lang="en">From a 1-minute micro-session up to 30 minutes</span></li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span lang="de" data-lang="de">Intensität in der Einheit anpassbar</span><span lang="en" data-lang="en">Adjust the effort mid-session</span></li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span lang="de" data-lang="de">Sichere Hinweise bei körperlichen Einschränkungen</span><span lang="en" data-lang="en">Safety notes that respect body limitations</span></li>
           </ul>
         </div>
         <div class="sc-visual reveal-left d1">
           <div class="shot" data-parallax="0.05">
-            <img data-lang="de" src="docs/screenshots/session_DE.png" alt="Geführte Einheit in MindMotion: aktueller Schritt, Fortschrittsring und Timer." width="1410" height="2968" loading="lazy">
-            <img data-lang="en" src="docs/screenshots/session_EN.png" alt="A guided MindMotion session: current step, progress ring and timer." width="1410" height="2968" loading="lazy">
+            <img lang="de" data-lang="de" src="docs/screenshots/session_DE.png" alt="Geführte Einheit in MindMotion: aktueller Schritt, Fortschrittsring und Timer." width="1410" height="2968" loading="lazy">
+            <img lang="en" data-lang="en" src="docs/screenshots/session_EN.png" alt="A guided MindMotion session: current step, progress ring and timer." width="1410" height="2968" loading="lazy">
           </div>
         </div>
       </div>
 
       <div class="showcase">
         <div class="sc-text reveal-left">
-          <span class="sc-eyebrow"><span data-lang="de">Schlaf &amp; Fortschritt</span><span data-lang="en">Sleep &amp; progress</span></span>
-          <h2><span data-lang="de">Muster sehen – ohne sich schlecht zu fühlen.</span><span data-lang="en">See patterns – without feeling bad.</span></h2>
-          <p><span data-lang="de">Ein ruhiger Überblick aus Schlaf, Stimmung und Bewegung. Keine roten Warnungen, keine verpassten Ziele – nur sanfte Einsichten und eine optionale Wochenreflexion.</span><span data-lang="en">A calm overview from sleep, mood and movement. No red warnings, no missed goals – just gentle insights and an optional weekly reflection.</span></p>
+          <span class="sc-eyebrow"><span lang="de" data-lang="de">Schlaf &amp; Fortschritt</span><span lang="en" data-lang="en">Sleep &amp; progress</span></span>
+          <h2><span lang="de" data-lang="de">Muster sehen – ohne sich schlecht zu fühlen.</span><span lang="en" data-lang="en">See patterns – without feeling bad.</span></h2>
+          <p><span lang="de" data-lang="de">Ein ruhiger Überblick aus Schlaf, Stimmung und Bewegung. Keine roten Warnungen, keine verpassten Ziele – nur sanfte Einsichten und eine optionale Wochenreflexion.</span><span lang="en" data-lang="en">A calm overview from sleep, mood and movement. No red warnings, no missed goals – just gentle insights and an optional weekly reflection.</span></p>
           <ul class="sc-list">
-            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang="de">Schlafscore 0–100 aus Dauer &amp; Qualität</span><span data-lang="en">Sleep score 0–100 from duration &amp; quality</span></li>
-            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang="de">Wochenzusammenfassung &amp; PDF-Report</span><span data-lang="en">Weekly summary &amp; PDF report</span></li>
-            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-lang="de">Health-Connect-Import oder manuell</span><span data-lang="en">Health Connect import or manual entry</span></li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span lang="de" data-lang="de">Schlafscore 0–100 aus Dauer &amp; Qualität</span><span lang="en" data-lang="en">Sleep score 0–100 from duration &amp; quality</span></li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span lang="de" data-lang="de">Wochenzusammenfassung &amp; PDF-Report</span><span lang="en" data-lang="en">Weekly summary &amp; PDF report</span></li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span lang="de" data-lang="de">Health-Connect-Import oder manuell</span><span lang="en" data-lang="en">Health Connect import or manual entry</span></li>
           </ul>
         </div>
         <div class="sc-visual reveal-right d1">
           <div class="shot" data-parallax="0.05">
-            <img data-lang="de" src="docs/screenshots/progress_DE.png" alt="Fortschritts-Übersicht in MindMotion: Wohlbefinden-Wert, Wochenverlauf und Einsichten." width="1410" height="2968" loading="lazy">
-            <img data-lang="en" src="docs/screenshots/progress_EN.png" alt="MindMotion progress overview: wellbeing score, weekly trend and insights." width="1410" height="2968" loading="lazy">
+            <img lang="de" data-lang="de" src="docs/screenshots/progress_DE.png" alt="Fortschritts-Übersicht in MindMotion: Wohlbefinden-Wert, Wochenverlauf und Einsichten." width="1410" height="2968" loading="lazy">
+            <img lang="en" data-lang="en" src="docs/screenshots/progress_EN.png" alt="MindMotion progress overview: wellbeing score, weekly trend and insights." width="1410" height="2968" loading="lazy">
           </div>
         </div>
       </div>
@@ -273,24 +282,24 @@
   <section style="background:var(--white)">
     <div class="wrap">
       <div class="sec-head">
-        <div class="sec-eyebrow reveal"><span class="idx">02</span><span data-lang="de">In drei Schritten</span><span data-lang="en">In three steps</span></div>
-        <h2 class="reveal d1"><span data-lang="de">Starten dauert keine Minute.</span><span data-lang="en">Getting started takes under a minute.</span></h2>
+        <div class="sec-eyebrow reveal"><span class="idx">02</span><span lang="de" data-lang="de">In drei Schritten</span><span lang="en" data-lang="en">In three steps</span></div>
+        <h2 class="reveal d1"><span lang="de" data-lang="de">Starten dauert keine Minute.</span><span lang="en" data-lang="en">Getting started takes under a minute.</span></h2>
       </div>
       <div class="steps stagger reveal">
         <div class="step">
           <div class="num">1</div>
-          <h3><span data-lang="de">Stimmung wählen</span><span data-lang="en">Pick your mood</span></h3>
-          <p><span data-lang="de">Sag, wie viel Energie du gerade hast. Die Vorschläge ändern sich sofort.</span><span data-lang="en">Tell it how much energy you have. The suggestions change instantly.</span></p>
+          <h3><span lang="de" data-lang="de">Stimmung wählen</span><span lang="en" data-lang="en">Pick your mood</span></h3>
+          <p><span lang="de" data-lang="de">Sag, wie viel Energie du gerade hast. Die Vorschläge ändern sich sofort.</span><span lang="en" data-lang="en">Tell it how much energy you have. The suggestions change instantly.</span></p>
         </div>
         <div class="step">
           <div class="num">2</div>
-          <h3><span data-lang="de">Einheit starten</span><span data-lang="en">Start a session</span></h3>
-          <p><span data-lang="de">Folge der ruhigen Schritt-für-Schritt-Führung – 1 bis 30 Minuten, ganz wie es passt.</span><span data-lang="en">Follow the calm step-by-step guidance – 1 to 30 minutes, whatever fits.</span></p>
+          <h3><span lang="de" data-lang="de">Einheit starten</span><span lang="en" data-lang="en">Start a session</span></h3>
+          <p><span lang="de" data-lang="de">Folge der ruhigen Schritt-für-Schritt-Führung – 1 bis 30 Minuten, ganz wie es passt.</span><span lang="en" data-lang="en">Follow the calm step-by-step guidance – 1 to 30 minutes, whatever fits.</span></p>
         </div>
         <div class="step">
           <div class="num">3</div>
-          <h3><span data-lang="de">Ruhe spüren</span><span data-lang="en">Feel the calm</span></h3>
-          <p><span data-lang="de">Optional Stimmung danach festhalten. Über Zeit siehst du, was dir guttut.</span><span data-lang="en">Optionally note how you feel after. Over time you see what works for you.</span></p>
+          <h3><span lang="de" data-lang="de">Ruhe spüren</span><span lang="en" data-lang="en">Feel the calm</span></h3>
+          <p><span lang="de" data-lang="de">Optional Stimmung danach festhalten. Über Zeit siehst du, was dir guttut.</span><span lang="en" data-lang="en">Optionally note how you feel after. Over time you see what works for you.</span></p>
         </div>
       </div>
     </div>
@@ -302,15 +311,15 @@
       <div class="privacy-band reveal-scale">
         <div class="privacy-grid">
           <div>
-            <h2><span data-lang="de">Privatsphäre ist kein Feature. Sie ist die Grundlage.</span><span data-lang="en">Privacy isn't a feature. It's the foundation.</span></h2>
-            <p style="margin-bottom:26px"><span data-lang="de">MindMotion speichert alles auf deinem Gerät. Es gibt kein Konto, kein Tracking, keine Werbung und keinen MindMotion-Server. Daten verlassen dein Gerät nur, wenn du sie selbst exportierst.</span><span data-lang="en">MindMotion stores everything on your device. There's no account, no tracking, no ads and no MindMotion server. Data only leaves your device when you export it yourself.</span></p>
-            <a class="btn btn-ghost" href="privacy.html"><span data-lang="de">Datenschutzerklärung lesen</span><span data-lang="en">Read the privacy policy</span></a>
+            <h2><span lang="de" data-lang="de">Privatsphäre ist kein Feature. Sie ist die Grundlage.</span><span lang="en" data-lang="en">Privacy isn't a feature. It's the foundation.</span></h2>
+            <p style="margin-bottom:26px"><span lang="de" data-lang="de">MindMotion speichert alles auf deinem Gerät. Es gibt kein Konto, kein Tracking, keine Werbung und keinen MindMotion-Server. Daten verlassen dein Gerät nur, wenn du sie selbst exportierst.</span><span lang="en" data-lang="en">MindMotion stores everything on your device. There's no account, no tracking, no ads and no MindMotion server. Data only leaves your device when you export it yourself.</span></p>
+            <a class="btn btn-ghost" href="privacy.html"><span lang="de" data-lang="de">Datenschutzerklärung lesen</span><span lang="en" data-lang="en">Read the privacy policy</span></a>
           </div>
           <ul class="privacy-points">
-            <li><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span><span><b data-lang="de">Lokal gespeichert</b><b data-lang="en">Stored locally</b><span data-lang="de">Kalender- und Health-Daten werden nur auf dem Gerät verarbeitet.</span><span data-lang="en">Calendar and health data are processed on the device only.</span></span></li>
-            <li><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span><b data-lang="de">Kein Konto, kein Login</b><b data-lang="en">No account, no login</b><span data-lang="de">Einfach öffnen und loslegen – nichts zu registrieren.</span><span data-lang="en">Just open and start – nothing to sign up for.</span></span></li>
-            <li><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m4 4 16 16"/></svg></span><span><b data-lang="de">Keine Analyse-SDKs</b><b data-lang="en">No analytics SDKs</b><span data-lang="de">Keine Tracker, keine Werbe-IDs, keine Internet-Berechtigung für uns.</span><span data-lang="en">No trackers, no ad IDs, no internet permission for us.</span></span></li>
-            <li><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 18.4A2 2 0 0 1 19 21H5a2 2 0 0 1-1.8-2.6"/><path d="M12 3v12"/><path d="m8 11 4 4 4-4"/></svg></span><span><b data-lang="de">DSGVO-konform</b><b data-lang="en">GDPR-friendly</b><span data-lang="de">Du behältst die volle Kontrolle – ansehen, löschen, exportieren, jederzeit.</span><span data-lang="en">You stay in full control – view, delete, export, anytime.</span></span></li>
+            <li><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span><span><b lang="de" data-lang="de">Lokal gespeichert</b><b lang="en" data-lang="en">Stored locally</b><span lang="de" data-lang="de">Kalender- und Health-Daten werden nur auf dem Gerät verarbeitet.</span><span lang="en" data-lang="en">Calendar and health data are processed on the device only.</span></span></li>
+            <li><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span><b lang="de" data-lang="de">Kein Konto, kein Login</b><b lang="en" data-lang="en">No account, no login</b><span lang="de" data-lang="de">Einfach öffnen und loslegen – nichts zu registrieren.</span><span lang="en" data-lang="en">Just open and start – nothing to sign up for.</span></span></li>
+            <li><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m4 4 16 16"/></svg></span><span><b lang="de" data-lang="de">Keine Analyse-SDKs</b><b lang="en" data-lang="en">No analytics SDKs</b><span lang="de" data-lang="de">Keine Tracker, keine Werbe-IDs, keine Internet-Berechtigung für uns.</span><span lang="en" data-lang="en">No trackers, no ad IDs, no internet permission for us.</span></span></li>
+            <li><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 18.4A2 2 0 0 1 19 21H5a2 2 0 0 1-1.8-2.6"/><path d="M12 3v12"/><path d="m8 11 4 4 4-4"/></svg></span><span><b lang="de" data-lang="de">DSGVO-konform</b><b lang="en" data-lang="en">GDPR-friendly</b><span lang="de" data-lang="de">Du behältst die volle Kontrolle – ansehen, löschen, exportieren, jederzeit.</span><span lang="en" data-lang="en">You stay in full control – view, delete, export, anytime.</span></span></li>
           </ul>
         </div>
       </div>
@@ -321,40 +330,40 @@
   <section class="gallery">
     <div class="wrap">
       <div class="sec-head">
-        <div class="sec-eyebrow reveal"><span class="idx">03</span><span data-lang="de">Ein Blick in die App</span><span data-lang="en">A look inside</span></div>
-        <h2 class="reveal d1"><span data-lang="de">Ruhig gestaltet, bis ins Detail.</span><span data-lang="en">Calmly designed, down to the detail.</span></h2>
+        <div class="sec-eyebrow reveal"><span class="idx">03</span><span lang="de" data-lang="de">Ein Blick in die App</span><span lang="en" data-lang="en">A look inside</span></div>
+        <h2 class="reveal d1"><span lang="de" data-lang="de">Ruhig gestaltet, bis ins Detail.</span><span lang="en" data-lang="en">Calmly designed, down to the detail.</span></h2>
       </div>
       <div class="gallery-track stagger reveal">
         <div>
           <div class="shot">
-            <img data-lang="de" src="docs/screenshots/discover_DE.png" alt="Entdecken-Bildschirm mit durchsuchbarem Aktivitätenkatalog und Filtern." width="1410" height="2968" loading="lazy">
-            <img data-lang="en" src="docs/screenshots/discover_EN.png" alt="Discover screen with a searchable activity catalogue and filters." width="1410" height="2968" loading="lazy">
+            <img lang="de" data-lang="de" src="docs/screenshots/discover_DE.png" alt="Entdecken-Bildschirm mit durchsuchbarem Aktivitätenkatalog und Filtern." width="1410" height="2968" loading="lazy">
+            <img lang="en" data-lang="en" src="docs/screenshots/discover_EN.png" alt="Discover screen with a searchable activity catalogue and filters." width="1410" height="2968" loading="lazy">
           </div>
-          <div class="gcap"><span data-lang="de">Entdecken</span><span data-lang="en">Discover</span></div>
+          <div class="gcap"><span lang="de" data-lang="de">Entdecken</span><span lang="en" data-lang="en">Discover</span></div>
         </div>
 
         <div>
           <div class="shot">
-            <img data-lang="de" src="docs/screenshots/result_DE.png" alt="Abschluss-Bildschirm einer Einheit mit ruhiger Bestätigung und optionalem Stimmungs-Check." width="1410" height="2968" loading="lazy">
-            <img data-lang="en" src="docs/screenshots/result_EN.png" alt="Session completion screen with a calm acknowledgement and an optional mood check." width="1410" height="2968" loading="lazy">
+            <img lang="de" data-lang="de" src="docs/screenshots/result_DE.png" alt="Abschluss-Bildschirm einer Einheit mit ruhiger Bestätigung und optionalem Stimmungs-Check." width="1410" height="2968" loading="lazy">
+            <img lang="en" data-lang="en" src="docs/screenshots/result_EN.png" alt="Session completion screen with a calm acknowledgement and an optional mood check." width="1410" height="2968" loading="lazy">
           </div>
-          <div class="gcap"><span data-lang="de">Geschafft</span><span data-lang="en">Done</span></div>
+          <div class="gcap"><span lang="de" data-lang="de">Geschafft</span><span lang="en" data-lang="en">Done</span></div>
         </div>
 
         <div>
           <div class="shot">
-            <img data-lang="de" src="docs/screenshots/profile_DE.png" alt="Profil-Bildschirm mit Zielen, Fokusbereichen und Hinweisen zu körperlichen Einschränkungen." width="1410" height="2968" loading="lazy">
-            <img data-lang="en" src="docs/screenshots/profile_EN.png" alt="Profile screen with goals, focus areas and body-limitation notes." width="1410" height="2968" loading="lazy">
+            <img lang="de" data-lang="de" src="docs/screenshots/profile_DE.png" alt="Profil-Bildschirm mit Zielen, Fokusbereichen und Hinweisen zu körperlichen Einschränkungen." width="1410" height="2968" loading="lazy">
+            <img lang="en" data-lang="en" src="docs/screenshots/profile_EN.png" alt="Profile screen with goals, focus areas and body-limitation notes." width="1410" height="2968" loading="lazy">
           </div>
-          <div class="gcap"><span data-lang="de">Profil</span><span data-lang="en">Profile</span></div>
+          <div class="gcap"><span lang="de" data-lang="de">Profil</span><span lang="en" data-lang="en">Profile</span></div>
         </div>
 
         <div>
           <div class="shot">
-            <img data-lang="de" src="docs/screenshots/progress2_DE.png" alt="Schlaf- und Bewegungsverlauf mit Wochenchart und den letzten Einheiten." width="1410" height="2968" loading="lazy">
-            <img data-lang="en" src="docs/screenshots/progress2_EN.png" alt="Sleep and movement history with a weekly chart and recent sessions." width="1410" height="2968" loading="lazy">
+            <img lang="de" data-lang="de" src="docs/screenshots/progress2_DE.png" alt="Schlaf- und Bewegungsverlauf mit Wochenchart und den letzten Einheiten." width="1410" height="2968" loading="lazy">
+            <img lang="en" data-lang="en" src="docs/screenshots/progress2_EN.png" alt="Sleep and movement history with a weekly chart and recent sessions." width="1410" height="2968" loading="lazy">
           </div>
-          <div class="gcap"><span data-lang="de">Schlaf &amp; Bewegung</span><span data-lang="en">Sleep &amp; movement</span></div>
+          <div class="gcap"><span lang="de" data-lang="de">Schlaf &amp; Bewegung</span><span lang="en" data-lang="en">Sleep &amp; movement</span></div>
         </div>
       </div>
     </div>
@@ -365,32 +374,32 @@
     <div class="wrap">
       <div class="sec-head">
         <div class="sec-eyebrow reveal"><span class="idx">04</span>FAQ</div>
-        <h2 class="reveal d1"><span data-lang="de">Häufige Fragen</span><span data-lang="en">Frequently asked</span></h2>
+        <h2 class="reveal d1"><span lang="de" data-lang="de">Häufige Fragen</span><span lang="en" data-lang="en">Frequently asked</span></h2>
       </div>
       <div class="faq reveal">
         <details class="qa">
-          <summary><span><span data-lang="de">Ist MindMotion kostenlos?</span><span data-lang="en">Is MindMotion free?</span></span><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <div class="ans"><span data-lang="de">Ja. MindMotion ist kostenlos – ohne Werbung, ohne Tracking und ohne versteckte In-App-Käufe. Die App erscheint für Android; Details zur Verfügbarkeit folgen hier zum Launch.</span><span data-lang="en">Yes. MindMotion is free – with no ads, no tracking and no hidden in-app purchases. It's launching for Android; availability details will appear here at launch.</span></div>
+          <summary><span><span lang="de" data-lang="de">Ist MindMotion kostenlos?</span><span lang="en" data-lang="en">Is MindMotion free?</span></span><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="ans"><span lang="de" data-lang="de">Ja. MindMotion ist kostenlos – ohne Werbung, ohne Tracking und ohne versteckte In-App-Käufe. Die App erscheint für Android; Details zur Verfügbarkeit folgen hier zum Launch.</span><span lang="en" data-lang="en">Yes. MindMotion is free – with no ads, no tracking and no hidden in-app purchases. It's launching for Android; availability details will appear here at launch.</span></div>
         </details>
         <details class="qa">
-          <summary><span><span data-lang="de">Brauche ich ein Konto?</span><span data-lang="en">Do I need an account?</span></span><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <div class="ans"><span data-lang="de">Nein. Es gibt kein Login und keine Registrierung – einfach öffnen und loslegen. Alle Daten bleiben auf deinem Gerät.</span><span data-lang="en">No. There's no login and no sign-up – just open it and start. All data stays on your device.</span></div>
+          <summary><span><span lang="de" data-lang="de">Brauche ich ein Konto?</span><span lang="en" data-lang="en">Do I need an account?</span></span><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="ans"><span lang="de" data-lang="de">Nein. Es gibt kein Login und keine Registrierung – einfach öffnen und loslegen. Alle Daten bleiben auf deinem Gerät.</span><span lang="en" data-lang="en">No. There's no login and no sign-up – just open it and start. All data stays on your device.</span></div>
         </details>
         <details class="qa">
-          <summary><span><span data-lang="de">Muss ich meinen Kalender freigeben?</span><span data-lang="en">Do I have to share my calendar?</span></span><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <div class="ans"><span data-lang="de">Nein, das ist optional. Der Kalenderzugriff hilft, freie Lücken und den richtigen Moment zu erkennen – du kannst deinen Stundenplan aber auch manuell eintragen. Kalenderdaten verlassen nie dein Gerät.</span><span data-lang="en">No, that's optional. Calendar access helps detect free gaps and the right moment – but you can also enter your schedule manually. Calendar data never leaves your device.</span></div>
+          <summary><span><span lang="de" data-lang="de">Muss ich meinen Kalender freigeben?</span><span lang="en" data-lang="en">Do I have to share my calendar?</span></span><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="ans"><span lang="de" data-lang="de">Nein, das ist optional. Der Kalenderzugriff hilft, freie Lücken und den richtigen Moment zu erkennen – du kannst deinen Stundenplan aber auch manuell eintragen. Kalenderdaten verlassen nie dein Gerät.</span><span lang="en" data-lang="en">No, that's optional. Calendar access helps detect free gaps and the right moment – but you can also enter your schedule manually. Calendar data never leaves your device.</span></div>
         </details>
         <details class="qa">
-          <summary><span><span data-lang="de">Gibt es Streaks oder Erinnerungen, die nerven?</span><span data-lang="en">Are there streaks or nagging reminders?</span></span><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <div class="ans"><span data-lang="de">Bewusst nicht. Keine Streaks, keine Ranglisten. Sanfte, kontextbezogene Vorschläge mit Ruhezeiten und Tageslimit, die lernen, sich zurückzuhalten.</span><span data-lang="en">Deliberately not. No streaks, no leaderboards. Gentle, context-aware suggestions with quiet hours and a daily cap that learn to back off.</span></div>
+          <summary><span><span lang="de" data-lang="de">Gibt es Streaks oder Erinnerungen, die nerven?</span><span lang="en" data-lang="en">Are there streaks or nagging reminders?</span></span><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="ans"><span lang="de" data-lang="de">Bewusst nicht. Keine Streaks, keine Ranglisten. Sanfte, kontextbezogene Vorschläge mit Ruhezeiten und Tageslimit, die lernen, sich zurückzuhalten.</span><span lang="en" data-lang="en">Deliberately not. No streaks, no leaderboards. Gentle, context-aware suggestions with quiet hours and a daily cap that learn to back off.</span></div>
         </details>
         <details class="qa">
-          <summary><span><span data-lang="de">Ist die App auf Deutsch und Englisch?</span><span data-lang="en">Is the app in German and English?</span></span><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <div class="ans"><span data-lang="de">Ja. MindMotion ist deutschsprachig zuerst, mit vollständiger englischer Unterstützung für alle Bildschirme – umschaltbar in den Einstellungen.</span><span data-lang="en">Yes. MindMotion is German-first with full English support across every screen – switchable in Settings.</span></div>
+          <summary><span><span lang="de" data-lang="de">Ist die App auf Deutsch und Englisch?</span><span lang="en" data-lang="en">Is the app in German and English?</span></span><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="ans"><span lang="de" data-lang="de">Ja. MindMotion ist deutschsprachig zuerst, mit vollständiger englischer Unterstützung für alle Bildschirme – umschaltbar in den Einstellungen.</span><span lang="en" data-lang="en">Yes. MindMotion is German-first with full English support across every screen – switchable in Settings.</span></div>
         </details>
         <details class="qa">
-          <summary><span><span data-lang="de">Ersetzt MindMotion ärztlichen Rat?</span><span data-lang="en">Does MindMotion replace medical advice?</span></span><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <div class="ans"><span data-lang="de">Nein. MindMotion ersetzt keine medizinische Beratung. Hinweise zu Belastung und körperlichen Einschränkungen sind unterstützend gemeint, kein ärztlicher Rat.</span><span data-lang="en">No. MindMotion is not a substitute for medical advice. Notes about intensity and body limitations are supportive, not medical guidance.</span></div>
+          <summary><span><span lang="de" data-lang="de">Ersetzt MindMotion ärztlichen Rat?</span><span lang="en" data-lang="en">Does MindMotion replace medical advice?</span></span><span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="ans"><span lang="de" data-lang="de">Nein. MindMotion ersetzt keine medizinische Beratung. Hinweise zu Belastung und körperlichen Einschränkungen sind unterstützend gemeint, kein ärztlicher Rat.</span><span lang="en" data-lang="en">No. MindMotion is not a substitute for medical advice. Notes about intensity and body limitations are supportive, not medical guidance.</span></div>
         </details>
       </div>
     </div>
@@ -400,14 +409,14 @@
   <section class="final">
     <div class="wrap">
       <div class="final-card reveal-scale">
-        <h2><span data-lang="de">Bring Bewegung und Ruhe in deinen Tag.</span><span data-lang="en">Bring movement and calm into your day.</span></h2>
-        <p><span data-lang="de">Im richtigen Moment – ohne Druck, ohne Schuldgefühle, ohne dass deine Daten dein Gerät verlassen.</span><span data-lang="en">At the right moment – no pressure, no guilt, and without your data ever leaving your device.</span></p>
+        <h2><span lang="de" data-lang="de">Bring Bewegung und Ruhe in deinen Tag.</span><span lang="en" data-lang="en">Bring movement and calm into your day.</span></h2>
+        <p><span lang="de" data-lang="de">Im richtigen Moment – ohne Druck, ohne Schuldgefühle, ohne dass deine Daten dein Gerät verlassen.</span><span lang="en" data-lang="en">At the right moment – no pressure, no guilt, and without your data ever leaving your device.</span></p>
         <div class="cta-row">
           <span class="store-badge soon" role="img" aria-label="Bald verfügbar bei Google Play – Coming soon on Google Play">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#EAF6EF" d="M3.6 1.8 13 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#A8D5BA" d="M16.8 8.5 5.9 2.3 14 10.4l2.8-1.9z"/><path fill="#5B9EA6" d="M16.8 15.5 14 13.6 5.9 21.7l10.9-6.2z"/><path fill="#6B9B8A" d="M20.4 11.1c.7.4.7 1.4 0 1.8l-2.6 1.5L14.7 12l3.1-2.4 2.6 1.5z"/></svg>
-            <span><small data-lang="de">Bald verfügbar bei</small><small data-lang="en">Coming soon on</small><strong>Google Play</strong></span>
+            <span><small lang="de" data-lang="de">Bald verfügbar bei</small><small lang="en" data-lang="en">Coming soon on</small><strong>Google Play</strong></span>
           </span>
-          <a class="btn btn-ghost" href="privacy.html"><span data-lang="de">Datenschutz ansehen</span><span data-lang="en">View privacy</span></a>
+          <a class="btn btn-ghost" href="privacy.html"><span lang="de" data-lang="de">Datenschutz ansehen</span><span lang="en" data-lang="en">View privacy</span></a>
         </div>
       </div>
     </div>
@@ -424,28 +433,28 @@
           <span class="logo" aria-hidden="true"><svg viewBox="26 26 56 56" aria-hidden="true"><path fill="#A8D5BA" d="M54,30 C40,42 32,54 32,66 C32,72 38,78 48,78 C58,78 70,68 76,52 C78,46 78,40 78,34 C72,32 64,30 54,30 Z"/><path fill="#6B9B8A" d="M54,30 C50,46 46,58 42,72 C44,74 46,76 48,78"/></svg></span>
           MindMotion
         </div>
-        <p class="foot-about"><span data-lang="de">Die ruhige App für Bewegung, Atem und Meditation im Studienalltag – im richtigen Moment.</span><span data-lang="en">The calm app for movement, breathing and meditation in student life – at the right moment.</span></p>
+        <p class="foot-about"><span lang="de" data-lang="de">Die ruhige App für Bewegung, Atem und Meditation im Studienalltag – im richtigen Moment.</span><span lang="en" data-lang="en">The calm app for movement, breathing and meditation in student life – at the right moment.</span></p>
       </div>
       <div>
-        <h4><span data-lang="de">Entdecken</span><span data-lang="en">Explore</span></h4>
+        <h4><span lang="de" data-lang="de">Entdecken</span><span lang="en" data-lang="en">Explore</span></h4>
         <ul>
-          <li><a href="#features"><span data-lang="de">Funktionen</span><span data-lang="en">Features</span></a></li>
-          <li><a href="#moment"><span data-lang="de">Im richtigen Moment</span><span data-lang="en">At the right moment</span></a></li>
+          <li><a href="#features"><span lang="de" data-lang="de">Funktionen</span><span lang="en" data-lang="en">Features</span></a></li>
+          <li><a href="#moment"><span lang="de" data-lang="de">Im richtigen Moment</span><span lang="en" data-lang="en">At the right moment</span></a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
       <div>
-        <h4><span data-lang="de">Rechtliches &amp; Kontakt</span><span data-lang="en">Legal &amp; contact</span></h4>
+        <h4><span lang="de" data-lang="de">Rechtliches &amp; Kontakt</span><span lang="en" data-lang="en">Legal &amp; contact</span></h4>
         <ul>
-          <li><a href="privacy.html"><span data-lang="de">Datenschutzerklärung</span><span data-lang="en">Privacy policy</span></a></li>
-          <li><a href="impressum.html"><span data-lang="de">Impressum</span><span data-lang="en">Legal notice</span></a></li>
+          <li><a href="privacy.html"><span lang="de" data-lang="de">Datenschutzerklärung</span><span lang="en" data-lang="en">Privacy policy</span></a></li>
+          <li><a href="impressum.html"><span lang="de" data-lang="de">Impressum</span><span lang="en" data-lang="en">Legal notice</span></a></li>
           <li><a href="mailto:mindmotion.feedback@gmail.com">mindmotion.feedback@gmail.com</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
       <span>© <span id="year">2026</span> MindMotion</span>
-      <span class="disclaimer"><span data-lang="de">MindMotion ersetzt keine medizinische Beratung. Hinweise zu Belastung und körperlichen Einschränkungen sind unterstützend gemeint, kein ärztlicher Rat.</span><span data-lang="en">MindMotion is not a substitute for medical advice. Notes about intensity and body limitations are supportive, not medical guidance.</span></span>
+      <span class="disclaimer"><span lang="de" data-lang="de">MindMotion ersetzt keine medizinische Beratung. Hinweise zu Belastung und körperlichen Einschränkungen sind unterstützend gemeint, kein ärztlicher Rat.</span><span lang="en" data-lang="en">MindMotion is not a substitute for medical advice. Notes about intensity and body limitations are supportive, not medical guidance.</span></span>
     </div>
   </div>
 </footer>

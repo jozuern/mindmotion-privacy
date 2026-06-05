@@ -15,7 +15,7 @@
   --light-green: #A8D5BA;
   --calm-blue:   #5B9EA6;
   --charcoal:    #2D2D2D;  /* body text */
-  --muted:       #768A84;  /* helper text (AA on cream) */
+  --muted:       #566E67;  /* helper text — WCAG AA on white & cream */
   --white:       #FFFFFF;
   --line:        #E2E9E5;
 
@@ -58,6 +58,11 @@ html[data-theme="dark"] {
   --header-bg:   rgba(15,28,25,.74);
   color-scheme: dark;
 }
+/* Dark-mode component tweaks: lift the feature cards above the section so they
+   read as raised, not as cut-out wells (the default token swap makes the gap
+   between section + card too deep in dark). */
+html[data-theme="dark"] .feat { background: #1B3A33; border-color: #2A4940; }
+html[data-theme="dark"] .feat:hover { border-color: transparent; }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 88px; }
@@ -125,6 +130,19 @@ header.scrolled { border-bottom-color: var(--line); box-shadow: 0 4px 24px rgba(
 .nav-links a::after { content: ""; position: absolute; left: 0; bottom: -4px; height: 2px; width: 0; background: var(--sage); border-radius: 2px; transition: width .3s var(--ease); }
 .nav-links a:hover { color: var(--heading); text-decoration: none; }
 .nav-links a:hover::after { width: 100%; }
+
+/* Hamburger (mobile only — revealed in the ≤960px media query) */
+.nav-toggle {
+  display: none; width: 38px; height: 38px; flex: none; place-items: center;
+  border: 0; cursor: pointer; border-radius: 999px; background: var(--cream); color: var(--heading);
+  transition: background .25s var(--ease);
+}
+.nav-toggle:hover { background: var(--soft-mint); }
+.nav-toggle svg { width: 20px; height: 20px; }
+.nav-toggle .ic-close { display: none; }
+header.menu-open .nav-toggle .ic-open { display: none; }
+header.menu-open .nav-toggle .ic-close { display: block; }
+.nav-links-cta, .nav-links-lang { display: none; }  /* only surface inside the mobile dropdown */
 
 .lang-toggle { display: inline-flex; background: var(--cream); border-radius: 999px; padding: 3px; gap: 2px; }
 .lang-toggle button {
@@ -352,6 +370,19 @@ footer ul a:hover { color: #fff; text-decoration: none; }
 .d1 { transition-delay: .08s; } .d2 { transition-delay: .16s; } .d3 { transition-delay: .24s; }
 .d4 { transition-delay: .32s; } .d5 { transition-delay: .40s; } .d6 { transition-delay: .48s; }
 
+/* Screenshot wipe-reveal — the image builds up from the bottom as its row enters,
+   on top of the card's slide-in. The drop-shadow follows the clip, so it grows
+   with the reveal. Keyed off the same `.in` flag the observer already sets. */
+.sc-visual .shot img, .gallery-track .shot img {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1s var(--ease);
+}
+.sc-visual.in .shot img { clip-path: inset(0 0 0 0); transition-delay: .15s; }
+.gallery-track.in .shot img { clip-path: inset(0 0 0 0); }
+.gallery-track.in > *:nth-child(2) .shot img { transition-delay: .1s; }
+.gallery-track.in > *:nth-child(3) .shot img { transition-delay: .2s; }
+.gallery-track.in > *:nth-child(4) .shot img { transition-delay: .3s; }
+
 /* stagger children: set --i via inline style or nth-child */
 .stagger > * { opacity: 0; transform: translateY(22px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
 .stagger.in > * { opacity: 1; transform: none; }
@@ -371,6 +402,7 @@ footer ul a:hover { color: #fff; text-decoration: none; }
   .hero-shot, .sc-visual .shot { transform: none !important; }
   .blob, .floaty.one, .floaty.two, .eyebrow .dot { animation: none !important; }
   [data-parallax] { translate: none !important; will-change: auto; }
+  .sc-visual .shot img, .gallery-track .shot img { clip-path: none !important; transition: none !important; }
   .scroll-progress { display: none; }
 }
 
@@ -402,14 +434,46 @@ footer ul a:hover { color: #fff; text-decoration: none; }
   .sc-text { text-align: center; }
   .sc-list { text-align: left; max-width: 440px; margin-left: auto; margin-right: auto; }
   .privacy-band { padding: 48px 30px; }
-  .nav-links { display: none; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 34px 24px; }
   .reveal-left, .reveal-right { transform: translateY(28px); }
+
+  /* Collapse the inline links into a dropdown panel toggled by the hamburger.
+     The header CTA (.nav-cta) folds away — index re-offers it inside the panel
+     (.nav-links-cta); the legal pages lean on the brand link + in-article back. */
+  .nav-toggle { display: grid; }
+  .nav-cta { display: none; }
+  header.has-menu .nav-right > .lang-toggle { display: none; }  /* index only: folds into the panel. Legal pages (no panel) keep it in the bar. */
+  .nav-links {
+    position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0;
+    margin: 0; padding: 8px 24px 18px;
+    background: var(--header-bg);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 18px 40px rgba(27,59,54,.12);
+    opacity: 0; visibility: hidden; transform: translateY(-8px);
+    transition: opacity .25s var(--ease), transform .25s var(--ease), visibility .25s var(--ease);
+  }
+  header.menu-open .nav-links { opacity: 1; visibility: visible; transform: none; }
+  .nav-links a:not(.nav-links-cta) { padding: 14px 4px; font-size: 16.5px; border-bottom: 1px solid var(--line); }
+  .nav-links a::after { display: none; }
+  .nav-links-lang { display: inline-flex; align-self: flex-start; margin-top: 12px; }
+  .nav-links-cta { display: inline-flex; align-self: stretch; justify-content: center; margin-top: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-links { transition: none; }
 }
 @media (max-width: 640px) {
   section { padding: 66px 0; }
   .hero { padding: 56px 0 64px; }
   .wrap { padding: 0 20px; }
+  /* Keep the header on one line on narrow phones. */
+  .nav { gap: 10px; }
+  .nav-right { gap: 7px; }
+  .brand { font-size: 19px; gap: 9px; }
+  .brand .logo { width: 30px; height: 30px; }
+  .lang-toggle button { padding: 6px 10px; }
+  .theme-toggle, .nav-toggle { width: 36px; height: 36px; }
   .feat-grid { grid-template-columns: 1fr; }
   .floaty.one { left: -8px; } .floaty.two { right: -6px; }
   .final-card { padding: 50px 24px; }

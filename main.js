@@ -14,6 +14,43 @@
     var buttons = document.querySelectorAll('[data-set-lang]');
     if (!buttons.length) return;
 
+    // Landing-page social metadata, swapped so the in-browser title and any
+    // JS-aware scraper match the chosen language. (Static crawlers that don't
+    // run JS still read the German default in the markup.) Gated on og:image,
+    // which only the landing page carries — the policy/legal pages keep theirs.
+    var BASE = 'https://jozuern.github.io/mindmotion-privacy/docs/';
+    var META = {
+      de: {
+        title: 'MindMotion – Sport. Im richtigen Moment.',
+        desc: 'MindMotion ist die ruhige App für kurze Bewegungs-, Atem- und Meditationseinheiten – genau im richtigen Moment. Kein Streak, kein Druck, keine Werbung. Alle Daten bleiben lokal.',
+        img: BASE + 'feature-graphic-de-1024x500.png', locale: 'de_DE', alt: 'en_US'
+      },
+      en: {
+        title: 'MindMotion – Sport. At the right moment.',
+        desc: 'MindMotion is the calm app for short movement, breathing and meditation sessions – exactly at the right moment. No streak, no pressure, no ads. All your data stays on your device.',
+        img: BASE + 'feature-graphic-en-1024x500.png', locale: 'en_US', alt: 'de_DE'
+      }
+    };
+    var hasSocial = !!document.querySelector('meta[property="og:image"]');
+    function setMeta(sel, val) {
+      var el = document.querySelector(sel);
+      if (el && val) el.setAttribute('content', val);
+    }
+    function applyMeta(lang) {
+      if (!hasSocial) return;
+      var m = META[lang] || META.de;
+      document.title = m.title;
+      setMeta('meta[name="description"]', m.desc);
+      setMeta('meta[property="og:title"]', m.title);
+      setMeta('meta[property="og:description"]', m.desc);
+      setMeta('meta[property="og:image"]', m.img);
+      setMeta('meta[property="og:locale"]', m.locale);
+      setMeta('meta[property="og:locale:alternate"]', m.alt);
+      setMeta('meta[name="twitter:title"]', m.title);
+      setMeta('meta[name="twitter:description"]', m.desc);
+      setMeta('meta[name="twitter:image"]', m.img);
+    }
+
     function apply(lang) {
       if (lang !== 'de' && lang !== 'en') lang = 'de';
       document.documentElement.lang = lang;
@@ -22,6 +59,7 @@
         b.classList.toggle('active', on);
         b.setAttribute('aria-pressed', on ? 'true' : 'false');
       });
+      applyMeta(lang);
       try { localStorage.setItem(KEY, lang); } catch (e) {}
     }
 
@@ -71,6 +109,33 @@
     function onScroll() { header.classList.toggle('scrolled', window.scrollY > 8); }
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+
+  /* ─────────────── Mobile menu (hamburger) ─────────────── */
+  (function () {
+    var header = document.getElementById('site-header');
+    var toggle = document.getElementById('nav-toggle');
+    var nav = document.getElementById('primary-nav');
+    if (!header || !toggle || !nav) return;
+    function setOpen(open) {
+      header.classList.toggle('menu-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open
+        ? 'Menü schließen / Close menu'
+        : 'Menü öffnen / Open menu');
+    }
+    toggle.addEventListener('click', function () {
+      setOpen(!header.classList.contains('menu-open'));
+    });
+    nav.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setOpen(false);   // close after picking a link
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setOpen(false);
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 960) setOpen(false);  // never leave it stuck open on desktop
+    }, { passive: true });
   })();
 
   /* ─────────────── Scroll progress bar ─────────────── */
